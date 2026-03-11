@@ -1,0 +1,273 @@
+[
+  {
+    "id": 1,
+    "nombreComun": "Caoba",
+    "nombreCientifico": "Swietenia macrophylla",
+    "imagen": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&q=80",
+    "descripcion": "Árbol tropical de gran valor ecológico y maderable. Especie emblemática de la Selva Lacandona en Chiapas, considerada en peligro de extinción por la sobreexplotación. Su madera rojiza es apreciada mundialmente, pero hoy se promueve su cultivo sustentable en sistemas agroforestales.",
+    "condicionesIdeales": "Trópico húmedo, altitud 0–800 m, suelo profundo y bien drenado, precipitación > 1500 mm/año",
+    "estados": ["Chiapas", "Tabasco", "Campeche", "Quintana Roo", "Veracruz"],
+    "tipoVegetacion": "Selva alta perennifolia",
+    "velocidadCrecimiento": "Rápido",
+    "usos": ["Maderable", "Restauración ecológica", "Agroforestal"],
+    "estadoConservacion": "Vulnerable (UICN)"
+  },
+  {
+    "id": 2,
+    "nombreComun": "Cedro Rojo",
+    "nombreCientifico": "Cedrela odorata",
+    "imagen": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&q=80",
+    "descripcion": "Árbol nativo de gran importancia en la selva chiapaneca. Reconocible por su aroma característico y su madera de alta calidad. Especie clave en proyectos de restauración de corredores biológicos en el estado, como el Corredor Biológico Mesoamericano.",
+    "condicionesIdeales": "Clima cálido–húmedo, altitud 0–1200 m, suelos arcillosos o limosos, precipitación 1000–3000 mm/año",
+    "estados": [
+      "Chiapas",
+      "Veracruz",
+      "Oaxaca",
+      "Tabasco",
+      "Campeche",
+      "Quintana Roo"
+    ],
+    "tipoVegetacion": "Selva mediana y alta",
+    "velocidadCrecimiento": "Moderado",
+    "usos": ["Maderable", "Restauración", "Medicinal"],
+    "estadoConservacion": "Vulnerable (UICN)"
+  },
+  {
+    "id": 3,
+    "nombreComun": "Pino Ocote",
+    "nombreCientifico": "Pinus oocarpa",
+    "imagen": "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?w=400&q=80",
+    "descripcion": "El pino más abundante de Chiapas y pilar de los bosques templados de las sierras del estado. Es pilar económico de comunidades de Los Altos y la Sierra Madre. Tolerante a incendios, es ideal para reforestación en zonas degradadas de altitud media.",
+    "condicionesIdeales": "Clima templado–fresco, altitud 600–2400 m, suelo ácido bien drenado, precipitación 800–1800 mm/año",
+    "estados": [
+      "Chiapas",
+      "Oaxaca",
+      "Guerrero",
+      "Michoacán",
+      "Jalisco",
+      "Durango"
+    ],
+    "tipoVegetacion": "Bosque de pino-encino",
+    "velocidadCrecimiento": "Moderado",
+    "usos": [
+      "Maderable",
+      "Resina",
+      "Restauración de laderas",
+      "Captura de carbono"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  },
+  {
+    "id": 4,
+    "nombreComun": "Encino Colorado",
+    "nombreCientifico": "Quercus rugosa",
+    "imagen": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+    "descripcion": "Especie dominante del bosque mesófilo de montaña en Chiapas y de la Sierra Madre. Es refugio de biodiversidad, con decenas de especies de aves e insectos asociadas. Sus bellotas son alimento esencial para la vida silvestre local y símbolo de los pueblos indígenas de Los Altos.",
+    "condicionesIdeales": "Clima templado–frío, altitud 1500–3000 m, suelo profundo con materia orgánica, precipitación 1000–2500 mm/año",
+    "estados": [
+      "Chiapas",
+      "Oaxaca",
+      "Guerrero",
+      "Jalisco",
+      "Michoacán",
+      "Estado de México"
+    ],
+    "tipoVegetacion": "Bosque mesófilo y pino-encino",
+    "velocidadCrecimiento": "Lento",
+    "usos": [
+      "Restauración ecológica",
+      "Biodiversidad",
+      "Leña sustentable",
+      "Captura de carbono"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  },
+  {
+    "id": 5,
+    "nombreComun": "Ramón Blanco",
+    "nombreCientifico": "Brosimum alicastrum",
+    "imagen": "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400&q=80",
+    "descripcion": "Árbol sagrado de los mayas, conocido como 'árbol del pan'. Sus semillas son altamente nutritivas y sus hojas sirven de forraje para el ganado, reduciendo la presión sobre los bosques. Es fundamental en sistemas agroforestales de las comunidades indígenas de Chiapas.",
+    "condicionesIdeales": "Trópico cálido–húmedo, altitud 0–900 m, tolera suelos calizos, precipitación 1200–3000 mm/año",
+    "estados": [
+      "Chiapas",
+      "Campeche",
+      "Yucatán",
+      "Quintana Roo",
+      "Veracruz",
+      "Tabasco"
+    ],
+    "tipoVegetacion": "Selva mediana y alta",
+    "velocidadCrecimiento": "Moderado",
+    "usos": [
+      "Alimenticio (semillas)",
+      "Forraje (hojas)",
+      "Agroforestal",
+      "Restauración"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  },
+  {
+    "id": 6,
+    "nombreComun": "Oyamel",
+    "nombreCientifico": "Abies religiosa",
+    "imagen": "https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=400&q=80",
+    "descripcion": "El árbol de las mariposas monarca. Formador de los bosques más altos de México, seriamente amenazado por el cambio climático y la tala ilegal. Su restauración es una prioridad nacional; cada árbol captura grandes cantidades de CO₂ y regula el ciclo hidrológico de las cuencas altas.",
+    "condicionesIdeales": "Clima frío, altitud 2400–3600 m, suelo bien drenado con mucha hojarasca, precipitación 1000–2500 mm/año",
+    "estados": [
+      "Estado de México",
+      "Michoacán",
+      "Puebla",
+      "Tlaxcala",
+      "Hidalgo",
+      "Chiapas (Sierra Madre)"
+    ],
+    "tipoVegetacion": "Bosque de abies (oyamel)",
+    "velocidadCrecimiento": "Lento",
+    "usos": [
+      "Captura de carbono",
+      "Biodiversidad",
+      "Regulación hídrica",
+      "Turismo ecológico"
+    ],
+    "estadoConservacion": "En peligro (UICN)"
+  },
+  {
+    "id": 7,
+    "nombreComun": "Huanacaxtle",
+    "nombreCientifico": "Enterolobium cyclocarpum",
+    "imagen": "https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=400&q=80",
+    "descripcion": "El árbol más grande de Mesoamérica, puede vivir más de 500 años. Es fundamental para la restauración de bosques tropicales secos en la costa del Pacífico y la depresión central de Chiapas. Sus vainas en espiral son distintivas y su sombra protege al ganado reduciendo el estrés térmico.",
+    "condicionesIdeales": "Trópico seco–subhúmedo, altitud 0–1200 m, suelos bien drenados, precipitación 600–1800 mm/año",
+    "estados": [
+      "Chiapas",
+      "Oaxaca",
+      "Michoacán",
+      "Jalisco",
+      "Colima",
+      "Guerrero",
+      "Veracruz"
+    ],
+    "tipoVegetacion": "Bosque tropical caducifolio",
+    "velocidadCrecimiento": "Rápido",
+    "usos": [
+      "Sombra",
+      "Restauración de bordes de ríos",
+      "Fijación de nitrógeno",
+      "Forraje"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  },
+  {
+    "id": 8,
+    "nombreComun": "Copal",
+    "nombreCientifico": "Bursera simaruba",
+    "imagen": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=400&q=80",
+    "descripcion": "Árbol sagrado en culturas mesoamericanas, fuente de resina de copal usada en ceremonias. Es pionero en la restauración de selvas, crece en suelos degradados donde otras especies no prosperan. Su corteza colorada es característica y su resina tiene usos medicinales documentados.",
+    "condicionesIdeales": "Trópico cálido, altitud 0–1500 m, tolera suelos pobres y secos, precipitación 600–2000 mm/año",
+    "estados": [
+      "Chiapas",
+      "Oaxaca",
+      "Veracruz",
+      "Yucatán",
+      "Campeche",
+      "Guerrero",
+      "Jalisco"
+    ],
+    "tipoVegetacion": "Selva baja caducifolia y mediana",
+    "velocidadCrecimiento": "Rápido",
+    "usos": [
+      "Ceremonial",
+      "Medicinal",
+      "Restauración de suelos degradados",
+      "Forestal"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  },
+  {
+    "id": 9,
+    "nombreComun": "Jabín",
+    "nombreCientifico": "Piscidia piscipula",
+    "imagen": "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&q=80",
+    "descripcion": "Árbol nativo de la selva maya en Yucatán, Campeche y selva costera de Chiapas. Su madera extremadamente dura es usada en construcción tradicional. Es una especie prioritaria en restauración del corredor biológico costero de Chiapas, donde se han perdido grandes extensiones de selva.",
+    "condicionesIdeales": "Trópico cálido–seco, altitud 0–400 m, suelos calcáreos o arenosos, precipitación 600–1400 mm/año",
+    "estados": ["Yucatán", "Campeche", "Quintana Roo", "Chiapas (costa)"],
+    "tipoVegetacion": "Selva baja y mediana caducifolia",
+    "velocidadCrecimiento": "Lento",
+    "usos": [
+      "Maderable (construcción)",
+      "Restauración costera",
+      "Cercas vivas"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  },
+  {
+    "id": 10,
+    "nombreComun": "Tepemezquite",
+    "nombreCientifico": "Lysiloma dealbatum",
+    "imagen": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&q=80",
+    "descripcion": "Árbol leguminoso nativo del trópico seco mexicano, pionero en restauración. Fija nitrógeno al suelo mejorando su fertilidad, lo que facilita la llegada de otras especies. Es fundamental en la recuperación de pastizales degradados por ganadería extensiva en la depresión central de Chiapas.",
+    "condicionesIdeales": "Trópico seco, altitud 0–1000 m, tolera suelos pobres y compactados, precipitación 500–1200 mm/año",
+    "estados": ["Chiapas", "Oaxaca", "Guerrero", "Jalisco", "Michoacán"],
+    "tipoVegetacion": "Bosque tropical caducifolio",
+    "velocidadCrecimiento": "Rápido",
+    "usos": [
+      "Restauración de pastizales",
+      "Fijación de nitrógeno",
+      "Leña",
+      "Cercas vivas"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  },
+  {
+    "id": 11,
+    "nombreComun": "Guanacaste Blanco",
+    "nombreCientifico": "Acacia pennatula",
+    "imagen": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&q=80",
+    "descripcion": "Leguminosa de rápido crecimiento y gran valor ecológico en zonas semiáridas del norte de México y la cuenca del Balsas. Sus espinas ofrecen refugio a aves y mamíferos, sus flores son fuente de néctar, y su capacidad de fijar nitrógeno la hace ideal para rehabilitar suelos erosionados.",
+    "condicionesIdeales": "Clima seco–semiseco, altitud 500–2000 m, suelos delgados y pedregosos, precipitación 350–900 mm/año",
+    "estados": [
+      "Sonora",
+      "Chihuahua",
+      "Coahuila",
+      "Tamaulipas",
+      "Nuevo León",
+      "San Luis Potosí",
+      "Durango"
+    ],
+    "tipoVegetacion": "Matorral xerófilo y bosque tropical caducifolio",
+    "velocidadCrecimiento": "Rápido",
+    "usos": [
+      "Restauración de zonas áridas",
+      "Fijación de nitrógeno",
+      "Forraje",
+      "Apicultura"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  },
+  {
+    "id": 12,
+    "nombreComun": "Pochote (Ceiba)",
+    "nombreCientifico": "Ceiba pentandra",
+    "imagen": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&q=80",
+    "descripcion": "El árbol sagrado del mundo maya. La ceiba más grande de Chiapas se encuentra en Ocozocuautla y tiene más de 300 años. Es una especie sombrilla: cuando crece, miles de especies de plantas, hongos, insectos y aves la siguen. Su restauración genera ecosistemas completos de forma natural.",
+    "condicionesIdeales": "Trópico húmedo y subhúmedo, altitud 0–1000 m, suelos profundos, precipitación 1000–3000 mm/año",
+    "estados": [
+      "Chiapas",
+      "Veracruz",
+      "Tabasco",
+      "Campeche",
+      "Yucatán",
+      "Oaxaca"
+    ],
+    "tipoVegetacion": "Selva alta y mediana perennifolia",
+    "velocidadCrecimiento": "Muy rápido",
+    "usos": [
+      "Restauración ecológica",
+      "Árbol sombrilla",
+      "Cultural/sagrado",
+      "Fibra (kapok)"
+    ],
+    "estadoConservacion": "Preocupación menor (UICN)"
+  }
+]

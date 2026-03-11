@@ -1,0 +1,26 @@
+# Entorno local — NEVER commitear este archivo
+.env.local
+.env
+
+# Dependencias
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build / dist
+dist/
+.vercel/
+.next/
+
+# Editor
+.vscode/settings.json
+*.swp
+*.swo
+.vercel

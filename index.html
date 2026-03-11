@@ -1,0 +1,1974 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bosque Digital: Conocer para Proteger — Plataforma educativa e interactiva sobre deforestación global para estudiantes universitarios de la UNACH."
+    />
+    <meta
+      name="keywords"
+      content="deforestación, bosques, Chiapas, México, conservación, educación ambiental, UNACH"
+    />
+    <meta name="author" content="Equipo Bosque Digital — UNACH" />
+    <title>Bosque Digital: Conocer para Proteger</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌲</text></svg>"
+    />
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome para íconos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Leaflet.js para mapas -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <!-- AOS.js para animaciones de scroll -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+
+    <!-- Estilos propios del proyecto -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- ========================================================
+       BARRA DE NAVEGACIÓN FIJA
+  ======================================================== -->
+    <nav
+      class="navbar"
+      id="navbar"
+      role="navigation"
+      aria-label="Menú principal"
+    >
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="#hero" class="nav-logo" aria-label="Inicio — Bosque Digital">
+          <i class="fas fa-tree" aria-hidden="true"></i>
+          <span>Bosque Digital</span>
+        </a>
+
+        <!-- Botón hamburguesa para móvil -->
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-expanded="false"
+          aria-controls="navMenu"
+          aria-label="Abrir menú"
+        >
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+
+        <!-- Menú de navegación -->
+        <ul class="nav-menu" id="navMenu" role="list">
+          <li><a href="#hero" class="nav-link active">Inicio</a></li>
+          <li><a href="#problema" class="nav-link">El Problema</a></li>
+          <li><a href="#soluciones" class="nav-link">Soluciones</a></li>
+          <li><a href="#comunidad" class="nav-link">Comunidad</a></li>
+          <li>
+            <a href="#comunidad" class="nav-cta">
+              <i class="fas fa-leaf" aria-hidden="true"></i> Únete
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ========================================================
+       SECCIÓN 1 — HERO / PORTADA
+  ======================================================== -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-titulo">
+      <!-- Imagen de fondo estática (Unsplash) —el overlay semi‑transparente se aplica encima -->
+      <div class="hero-bg-overlay" aria-hidden="true"></div>
+      <div class="hero-img-fallback" aria-hidden="true"></div>
+
+      <!-- Contenido del Hero -->
+      <div class="hero-content">
+        <div class="hero-badge" data-aos="fade-down" data-aos-duration="800">
+          <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+          <span>Alerta Ambiental Global</span>
+        </div>
+
+        <h1
+          id="hero-titulo"
+          class="hero-title"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="200"
+        >
+          Bosque Digital:<br />
+          <span class="hero-title-accent">Conocer para Proteger</span>
+        </h1>
+
+        <p
+          class="hero-subtitle"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="400"
+        >
+          Cada año perdemos una superficie de bosque equivalente a
+          <strong>Portugal entero</strong>. Explora los datos, comprende las
+          causas y únete a la solución.
+        </p>
+
+        <!-- Contadores animados de datos impactantes -->
+        <div
+          class="hero-stats"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-delay="600"
+        >
+          <div class="stat-card" role="region" aria-label="Estadística 1">
+            <span
+              class="stat-number"
+              data-target="420"
+              data-suffix="M ha"
+              id="statHectareas"
+              >0</span
+            >
+            <p class="stat-label">hectáreas perdidas desde 1990</p>
+          </div>
+          <div class="stat-card" role="region" aria-label="Estadística 2">
+            <span
+              class="stat-number"
+              data-target="10"
+              data-suffix="M ha/año"
+              id="statAnual"
+              >0</span
+            >
+            <p class="stat-label">desaparecen cada año</p>
+          </div>
+          <div class="stat-card" role="region" aria-label="Estadística 3">
+            <span
+              class="stat-number"
+              data-target="15"
+              data-suffix="%"
+              id="statGEI"
+              >0</span
+            >
+            <p class="stat-label">de las emisiones GEI globales</p>
+          </div>
+        </div>
+
+        <!-- Botón CTA principal -->
+        <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+          <a
+            href="#problema"
+            class="btn-cta"
+            aria-label="Explorar el problema de la deforestación"
+          >
+            <i class="fas fa-arrow-down" aria-hidden="true"></i>
+            Explorar el Problema
+          </a>
+        </div>
+      </div>
+
+      <!-- Indicador de scroll -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-dot"></span>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       SECCIÓN 2 — EL PROBLEMA
+  ======================================================== -->
+    <section
+      id="problema"
+      class="section problema-section"
+      aria-labelledby="problema-titulo"
+    >
+      <div class="container">
+        <!-- Encabezado de sección -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">
+            <i class="fas fa-globe-americas" aria-hidden="true"></i> El Problema
+          </span>
+          <h2 id="problema-titulo" class="section-title">
+            La Crisis Forestal Global
+          </h2>
+          <p class="section-subtitle">
+            Los bosques cubren el 31% del planeta y albergan el 80% de la
+            biodiversidad terrestre. Los estamos perdiendo a una velocidad sin
+            precedentes.
+          </p>
+        </div>
+
+        <!-- 2a. Mapa Interactivo de Deforestación -->
+        <div
+          class="map-module glass-card"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="map-header">
+            <h3>
+              <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+              Mapa de Pérdida de Cobertura Forestal
+            </h3>
+            <p class="map-description">
+              Visualiza la pérdida de bosques por región. Haz clic en el mapa
+              para ver estadísticas detalladas. Datos: Global Forest Watch /
+              Hansen et al.
+            </p>
+          </div>
+
+          <!-- Mapa embebido oficial de Global Forest Watch -->
+          <div
+            class="mapa-gfw-container"
+            style="
+              position: relative;
+              width: 100%;
+              height: 650px;
+              border-radius: 12px;
+              overflow: hidden;
+            "
+          >
+            <iframe
+              src="https://www.globalforestwatch.org/embed/map/country/MEX/?map=eyJjZW50ZXIiOnsibGF0IjoxNi43NSwibG5nIjotOTMuMTF9LCJ6b29tIjo3LCJkYXRhc2V0cyI6W3siZGF0YXNldCI6InBvbGl0aWNhbC1ib3VuZGFyaWVzIiwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZSwibGF5ZXJzIjpbImRpc3B1dGVkLXBvbGl0aWNhbC1ib3VuZGFyaWVzIiwicG9saXRpY2FsLWJvdW5kYXJpZXMiXX0seyJkYXRhc2V0IjoidHJlZS1jb3Zlci1sb3NzIiwibGF5ZXJzIjpbInRyZWUtY292ZXItbG9zcyJdLCJvcGFjaXR5IjoxLCJ2aXNpYmlsaXR5Ijp0cnVlfV19"
+              width="100%"
+              height="650"
+              frameborder="0"
+              style="border: none"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <p class="mapa-nota">
+            🌍 Mapa interactivo — puedes hacer zoom, cambiar capas y explorar la
+            pérdida forestal por año directamente en el mapa. Datos:
+            <a href="https://www.globalforestwatch.org" target="_blank"
+              >Global Forest Watch</a
+            >
+            / Hansen et al.
+          </p>
+        </div>
+
+        <!-- 2b. Gráficas Animadas de Causas -->
+        <div class="charts-section">
+          <h3 class="charts-title" data-aos="fade-up">
+            <i class="fas fa-chart-pie" aria-hidden="true"></i>
+            ¿Por qué estamos perdiendo los bosques?
+          </h3>
+
+          <div class="charts-grid">
+            <!-- Gráfica 1: Dona de causas -->
+            <div
+              class="chart-card glass-card"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
+              <div class="chart-card-header">
+                <h4>Causas de Deforestación Global</h4>
+                <button
+                  class="btn-info"
+                  data-tooltip="La ganadería extensiva es la principal causa de deforestación en América Latina. Según WWF y FAO, el 80% de la deforestación en Sudamérica está directamente vinculada a la expansión de pastizales para ganado bovino."
+                  aria-label="Más información sobre causas de deforestación"
+                >
+                  <i class="fas fa-question-circle" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="chart-wrapper">
+                <canvas
+                  id="chartCausas"
+                  aria-label="Gráfica circular de causas de deforestación"
+                  role="img"
+                ></canvas>
+              </div>
+              <p class="chart-source">Fuente: WWF, Global Forest Watch 2023</p>
+            </div>
+
+            <!-- Gráfica 2: Barras por región -->
+            <div
+              class="chart-card glass-card"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="chart-card-header">
+                <h4>Pérdida Forestal por Región (Mha/año)</h4>
+                <button
+                  class="btn-info"
+                  data-tooltip="La Amazonía brasileña lidera la pérdida forestal a nivel mundial, seguida por la cuenca del Congo en África y el Sudeste Asiático. México ha perdido más de 4 millones de ha desde el año 2000. Datos: FAO FRA 2020."
+                  aria-label="Más información sobre pérdida forestal por región"
+                >
+                  <i class="fas fa-question-circle" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="chart-wrapper">
+                <canvas
+                  id="chartRegiones"
+                  aria-label="Gráfica de barras de pérdida forestal por región"
+                  role="img"
+                ></canvas>
+              </div>
+              <p class="chart-source">
+                Fuente: FAO — Evaluación de los Recursos Forestales Mundiales
+                2020
+              </p>
+            </div>
+
+            <!-- Gráfica 3: Línea de tendencia CO₂ -->
+            <div
+              class="chart-card chart-card-wide glass-card"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
+              <div class="chart-card-header">
+                <h4>Emisiones de CO₂ por Deforestación (GtCO₂/año)</h4>
+                <button
+                  class="btn-info"
+                  data-tooltip="La deforestación libera el carbono almacenado en los árboles a la atmósfera. Se estima que cada año se emiten entre 4.8 y 6 GtCO₂ por esta causa, equivalente a las emisiones totales de la Unión Europea. Fuente: Global Carbon Project 2023."
+                  aria-label="Más información sobre emisiones de CO2 por deforestación"
+                >
+                  <i class="fas fa-question-circle" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="chart-wrapper">
+                <canvas
+                  id="chartEmisiones"
+                  aria-label="Gráfica de línea de tendencia de emisiones de CO2"
+                  role="img"
+                ></canvas>
+              </div>
+              <p class="chart-source">
+                Fuente: Global Carbon Project 2023 | IPCC AR6
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2c. Testimonios -->
+        <div class="testimonios-section" data-aos="fade-up">
+          <h3 class="testimonios-title">
+            <i class="fas fa-quote-left" aria-hidden="true"></i>
+            Voces de las Comunidades
+          </h3>
+          <p class="testimonios-nota">
+            <em
+              >Nota: Los siguientes testimonios son ilustrativos y
+              representativos de situaciones reales documentadas.</em
+            >
+          </p>
+
+          <div class="testimonios-grid">
+            <!-- Testimonio 1 -->
+            <div
+              class="testimonio-card glass-card"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div
+                class="testimonio-bg"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1546514355-7fdc90ccbd03?w=600&q=80&quot;);
+                "
+                role="img"
+                aria-label="Fotografía de bosque tropical"
+              ></div>
+              <div class="testimonio-content">
+                <blockquote>
+                  "Antes había lluvia todo el año. Ahora los animales se fueron
+                  y el río que cruzaba nuestra milpa se secó. Sin el monte, no
+                  hay agua."
+                </blockquote>
+                <cite>
+                  <strong>Don Marcos Pérez</strong><br />
+                  Comunidad Ch'ol — Palenque, Chiapas
+                </cite>
+              </div>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div
+              class="testimonio-card glass-card"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="testimonio-bg"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1448375240586-882707db888b?w=600&q=80&quot;);
+                "
+                role="img"
+                aria-label="Interior de bosque con rayos de sol"
+              ></div>
+              <div class="testimonio-content">
+                <blockquote>
+                  "Mi abuelo conocía 60 plantas medicinales en el bosque. Yo
+                  solo puedo enseñarle a mis hijos 15. El resto ya no existe
+                  cerca de aquí."
+                </blockquote>
+                <cite>
+                  <strong>Doña Elena Jiménez</strong><br />
+                  Partera tradicional — Ocosingo, Chiapas
+                </cite>
+              </div>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div
+              class="testimonio-card glass-card"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
+              <div
+                class="testimonio-bg"
+                style="
+                  background-image: url(&quot;https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=80&quot;);
+                "
+                role="img"
+                aria-label="Vista aérea de bosque deforestado"
+              ></div>
+              <div class="testimonio-content">
+                <blockquote>
+                  "Solíamos guardar semillas de 40 tipos de maíz. Tres
+                  inundaciones seguidas nos quitaron todo. El monte nos protegía
+                  de eso, y ya no está."
+                </blockquote>
+                <cite>
+                  <strong>Grupo de Mujeres Indígenas</strong><br />
+                  Las Margaritas, Chiapas
+                </cite>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       SECCIÓN 3 — MÓDULO DE SOLUCIONES
+  ======================================================== -->
+    <section
+      id="soluciones"
+      class="section soluciones-section"
+      aria-labelledby="soluciones-titulo"
+    >
+      <div class="container">
+        <!-- Encabezado -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">
+            <i class="fas fa-seedling" aria-hidden="true"></i> Soluciones
+          </span>
+          <h2 id="soluciones-titulo" class="section-title">
+            ¿Qué Podemos Hacer?
+          </h2>
+          <p class="section-subtitle">
+            Conocer el problema es el primer paso. Ahora actúa: planta, legisla,
+            consume y aprende.
+          </p>
+        </div>
+
+        <div class="calc-cta-banner glass-card" data-aos="fade-up">
+          <p class="calc-cta-text">
+            ¿Sabes cuánto bosque consume tu estilo de vida?
+          </p>
+          <button
+            class="btn-calc-cta"
+            id="btnIrCalculadora"
+            aria-label="Ir a la calculadora de impacto"
+          >
+            <i class="fas fa-calculator" aria-hidden="true"></i>
+            Calcular ahora
+          </button>
+        </div>
+
+        <!-- Menú de tabs -->
+        <div
+          class="tabs-container"
+          role="tablist"
+          aria-label="Módulos de soluciones"
+        >
+          <button
+            class="tab-btn active"
+            data-tab="reforesta"
+            role="tab"
+            aria-selected="true"
+            aria-controls="tab-reforesta"
+            id="tab-btn-reforesta"
+          >
+            <i class="fas fa-tree" aria-hidden="true"></i> Reforesta
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="legisla"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-legisla"
+            id="tab-btn-legisla"
+          >
+            <i class="fas fa-gavel" aria-hidden="true"></i> Legisla
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="consume"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-consume"
+            id="tab-btn-consume"
+          >
+            <i class="fas fa-calculator pulse-icon" aria-hidden="true"></i>
+            Calcula tu Impacto
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="aprende"
+            role="tab"
+            aria-selected="false"
+            aria-controls="tab-aprende"
+            id="tab-btn-aprende"
+          >
+            <i class="fas fa-book-open" aria-hidden="true"></i> Aprende y Actúa
+          </button>
+        </div>
+
+        <!-- ---- TAB 1: REFORESTA ---- -->
+        <div
+          class="tab-content active"
+          id="tab-reforesta"
+          role="tabpanel"
+          aria-labelledby="tab-btn-reforesta"
+        >
+          <div class="tab-inner">
+            <!-- Selector de estado y filtro de especies -->
+            <div class="reforesta-header" data-aos="fade-up">
+              <h3>
+                <i class="fas fa-seedling" aria-hidden="true"></i>
+                Especies Nativas para Reforestar
+              </h3>
+              <div class="especies-filter">
+                <label for="estadoSelect">Filtrar por estado:</label>
+                <select
+                  id="estadoSelect"
+                  class="select-estado"
+                  aria-label="Seleccionar estado de México"
+                >
+                  <option value="todos">Todos los estados</option>
+                  <option value="Chiapas" selected>Chiapas</option>
+                  <option value="Oaxaca">Oaxaca</option>
+                  <option value="Veracruz">Veracruz</option>
+                  <option value="Tabasco">Tabasco</option>
+                  <option value="Campeche">Campeche</option>
+                  <option value="Yucatán">Yucatán</option>
+                  <option value="Quintana Roo">Quintana Roo</option>
+                  <option value="Jalisco">Jalisco</option>
+                  <option value="Michoacán">Michoacán</option>
+                  <option value="Guerrero">Guerrero</option>
+                  <option value="Sonora">Sonora</option>
+                  <option value="Chihuahua">Chihuahua</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Grid de tarjetas de especies -->
+            <div
+              id="especiesGrid"
+              class="especies-grid"
+              role="list"
+              aria-label="Especies nativas para reforestación"
+            >
+              <!-- Generado dinámicamente por main.js -->
+              <div class="loading-especies" aria-live="polite">
+                <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                Cargando especies...
+              </div>
+            </div>
+
+            <!-- Mapa de proyectos de reforestación en Chiapas -->
+            <div class="reforesta-map-section glass-card" data-aos="fade-up">
+              <h3>
+                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                Proyectos de Reforestación en Chiapas
+              </h3>
+              <p>
+                Encuentra proyectos activos cerca de ti y únete como voluntario.
+                Haz clic en un marcador para ver detalles y registrarte.
+              </p>
+              <div
+                id="reforestaMap"
+                class="leaflet-map-container leaflet-map-small"
+                role="application"
+                aria-label="Mapa de proyectos de reforestación en Chiapas"
+              ></div>
+            </div>
+
+            <!-- Organizaciones aliadas -->
+            <div class="organizaciones-section" data-aos="fade-up">
+              <h3>
+                <i class="fas fa-handshake" aria-hidden="true"></i>
+                Organizaciones con Presencia en Chiapas
+              </h3>
+              <div class="org-cards-grid" id="orgCards">
+                <!-- Generado por main.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- TAB 2: LEGISLA ---- -->
+        <div
+          class="tab-content"
+          id="tab-legisla"
+          role="tabpanel"
+          aria-labelledby="tab-btn-legisla"
+        >
+          <div class="tab-inner">
+            <div data-aos="fade-up">
+              <h3>
+                <i class="fas fa-gavel" aria-hidden="true"></i>
+                Marco Legal Ambiental de México
+              </h3>
+              <p class="tab-desc">
+                Conoce las leyes que protegen los bosques. Busca por nombre,
+                tema o palabras clave.
+              </p>
+
+              <!-- Buscador de leyes -->
+              <div class="buscador-container" role="search">
+                <label for="buscadorLeyes" class="sr-only"
+                  >Buscar leyes ambientales</label
+                >
+                <div class="buscador-input-wrap">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <input
+                    type="text"
+                    id="buscadorLeyes"
+                    class="buscador-input"
+                    placeholder="Buscar por nombre, tema o palabra clave (ej: forestal, emisiones, ejido...)"
+                    aria-label="Buscar leyes ambientales mexicanas"
+                  />
+                </div>
+              </div>
+
+              <!-- Resultados de búsqueda -->
+              <div
+                id="leyesResultados"
+                class="leyes-resultados"
+                role="region"
+                aria-live="polite"
+                aria-label="Resultados de búsqueda de leyes"
+              >
+                <!-- Generado por main.js -->
+              </div>
+            </div>
+
+            <!-- Casos de éxito -->
+            <div class="casos-exito" data-aos="fade-up">
+              <h3>
+                <i class="fas fa-award" aria-hidden="true"></i>
+                Casos de Éxito en Conservación
+              </h3>
+              <div class="casos-grid">
+                <!-- Caso 1 -->
+                <div
+                  class="caso-card glass-card"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="caso-icon">
+                    <i class="fas fa-route" aria-hidden="true"></i>
+                  </div>
+                  <h4>Corredor Biológico Mesoamericano — Chiapas</h4>
+                  <p>
+                    Este corredor reconecta remanentes de selva entre la Reserva
+                    de Montes Azules y la Sierra Madre de Chiapas. Desde 2003,
+                    ha permitido la recuperación de poblaciones de jaguar, tapir
+                    y mono araña. 320,000 ha bajo esquemas de conservación
+                    activa con comunidades indígenas.
+                  </p>
+                  <div class="caso-tags">
+                    <span class="tag">Chiapas</span>
+                    <span class="tag">Biodiversidad</span>
+                    <span class="tag">Comunitario</span>
+                  </div>
+                </div>
+
+                <!-- Caso 2 -->
+                <div
+                  class="caso-card glass-card"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <div class="caso-icon">
+                    <i class="fas fa-coins" aria-hidden="true"></i>
+                  </div>
+                  <h4>Programa de Pago por Servicios Ambientales — CONAFOR</h4>
+                  <p>
+                    El programa PSA de CONAFOR ha pagado a ejidos y comunidades
+                    por conservar sus bosques. En Chiapas, más de 180
+                    comunidades reciben compensación económica neta por no talar
+                    sus predios, habiendo conservado más de 450,000 ha entre
+                    2003 y 2022.
+                  </p>
+                  <div class="caso-tags">
+                    <span class="tag">México</span>
+                    <span class="tag">PSA</span>
+                    <span class="tag">CONAFOR</span>
+                  </div>
+                </div>
+
+                <!-- Caso 3 -->
+                <div
+                  class="caso-card glass-card"
+                  data-aos="fade-up"
+                  data-aos-delay="300"
+                >
+                  <div class="caso-icon">
+                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                  </div>
+                  <h4>Reserva de la Biosfera Montes Azules — Chiapas</h4>
+                  <p>
+                    La reserva más grande de México con 331,200 ha de selva
+                    tropical. Establecida en 1978 y gestionada junto con
+                    comunidades lacandones, ha sido modelo internacional de
+                    manejo comunitario de bosques. Alberga más de 3,400 especies
+                    vegetales y 500 de vertebrados.
+                  </p>
+                  <div class="caso-tags">
+                    <span class="tag">Chiapas</span>
+                    <span class="tag">Biosfera</span>
+                    <span class="tag">UNESCO</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- TAB 3: CALCULADORA DE IMPACTO ---- -->
+        <div
+          class="tab-content"
+          id="tab-consume"
+          role="tabpanel"
+          aria-labelledby="tab-btn-consume"
+          data-aos="fade-up"
+        >
+          <div class="tab-inner">
+            <div data-aos="fade-up">
+              <h3>
+                <i class="fas fa-calculator" aria-hidden="true"></i>
+                Calculadora de Impacto en Bosques
+              </h3>
+              <p class="tab-desc">
+                Tus hábitos de consumo tienen un impacto directo en los bosques
+                del mundo. Calcula cuánta superficie forestal impactas cada año
+                y descubre cómo reducirlo.
+              </p>
+            </div>
+
+            <div class="calculator-layout">
+              <!-- Panel de inputs -->
+              <div class="calc-inputs glass-card" data-aos="fade-left">
+                <h4>
+                  <i class="fas fa-sliders-h" aria-hidden="true"></i> Tus
+                  Hábitos de Consumo
+                </h4>
+
+                <!-- Input: Carne de res -->
+                <div class="calc-input-group">
+                  <label for="inputCarne">
+                    <i class="fas fa-drumstick-bite" aria-hidden="true"></i>
+                    Carne de res por semana
+                  </label>
+                  <div class="input-slider-wrap">
+                    <input
+                      type="range"
+                      id="inputCarne"
+                      min="0"
+                      max="10"
+                      step="0.5"
+                      value="1.5"
+                      class="calc-slider"
+                      aria-label="Kilogramos de carne de res por semana"
+                    />
+                    <span class="input-value" id="valCarne">1.5 kg</span>
+                  </div>
+                  <p class="input-hint">
+                    1 kg de res ≈ 6.6 m² de bosque al año (FAO)
+                  </p>
+                </div>
+
+                <!-- Input: Lácteos -->
+                <div class="calc-input-group">
+                  <label for="inputLacteos">
+                    <i class="fas fa-glass-whiskey" aria-hidden="true"></i>
+                    Lácteos (leche equivalente) por semana
+                  </label>
+                  <div class="input-slider-wrap">
+                    <input
+                      type="range"
+                      id="inputLacteos"
+                      min="0"
+                      max="20"
+                      step="0.5"
+                      value="3"
+                      class="calc-slider"
+                      aria-label="Litros de leche equivalente por semana"
+                    />
+                    <span class="input-value" id="valLacteos">3 L</span>
+                  </div>
+                  <p class="input-hint">
+                    1 L de leche ≈ 0.97 m² de bosque al año (FAO)
+                  </p>
+                </div>
+
+                <!-- Input: Papel -->
+                <div class="calc-input-group">
+                  <label for="inputPapel">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    Hojas de papel por mes
+                  </label>
+                  <div class="input-slider-wrap">
+                    <input
+                      type="range"
+                      id="inputPapel"
+                      min="0"
+                      max="500"
+                      step="10"
+                      value="100"
+                      class="calc-slider"
+                      aria-label="Hojas de papel utilizadas por mes"
+                    />
+                    <span class="input-value" id="valPapel">100 hojas</span>
+                  </div>
+                  <p class="input-hint">100 hojas ≈ 0.1 m² de bosque (WWF)</p>
+                </div>
+
+                <!-- Input: Vuelos -->
+                <div class="calc-input-group">
+                  <label for="inputVuelos">
+                    <i class="fas fa-plane" aria-hidden="true"></i>
+                    Vuelos domésticos por año
+                  </label>
+                  <div class="input-slider-wrap">
+                    <input
+                      type="range"
+                      id="inputVuelos"
+                      min="0"
+                      max="20"
+                      step="1"
+                      value="2"
+                      class="calc-slider"
+                      aria-label="Número de vuelos domésticos por año"
+                    />
+                    <span class="input-value" id="valVuelos">2 vuelos</span>
+                  </div>
+                  <p class="input-hint">
+                    1 vuelo doméstico ≈ 0.5 m² deforestación indirecta
+                  </p>
+                </div>
+
+                <!-- Input: Madera/muebles -->
+                <div class="calc-input-group">
+                  <label>
+                    <i class="fas fa-couch" aria-hidden="true"></i>
+                    ¿Compras muebles/madera frecuentemente?
+                  </label>
+                  <div
+                    class="radio-group"
+                    role="group"
+                    aria-label="Consumo de muebles de madera"
+                  >
+                    <label class="radio-option">
+                      <input
+                        type="radio"
+                        name="madera"
+                        id="maderaSi"
+                        value="si"
+                      />
+                      <span>Sí, regularmente</span>
+                    </label>
+                    <label class="radio-option">
+                      <input
+                        type="radio"
+                        name="madera"
+                        id="maderaNo"
+                        value="no"
+                        checked
+                      />
+                      <span>No / Raramente</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Botón calcular -->
+                <button
+                  class="btn-calcular"
+                  id="btnCalcular"
+                  aria-label="Calcular mi impacto en los bosques"
+                >
+                  <i class="fas fa-calculator" aria-hidden="true"></i>
+                  Calcular mi Impacto
+                </button>
+              </div>
+
+              <!-- Panel de resultados -->
+              <div
+                class="calc-results glass-card"
+                id="calcResults"
+                data-aos="fade-right"
+              >
+                <div class="results-initial" id="resultsInitial">
+                  <i
+                    class="fas fa-leaf results-icon-placeholder"
+                    aria-hidden="true"
+                  ></i>
+                  <p>
+                    Completa tus datos y presiona "Calcular" para ver tu
+                    impacto.
+                  </p>
+                </div>
+
+                <div class="results-data hidden" id="resultsData">
+                  <h4>
+                    <i class="fas fa-chart-pie" aria-hidden="true"></i> Tu
+                    Impacto Anual
+                  </h4>
+
+                  <!-- Gauge animado -->
+                  <div class="gauge-container" data-aos="zoom-in">
+                    <canvas
+                      id="impactGauge"
+                      width="200"
+                      height="120"
+                      aria-label="Indicador de nivel de impacto ambiental"
+                      role="img"
+                    ></canvas>
+                    <div class="gauge-label">
+                      <span id="gaugeValue">0</span>
+                      <small>m² impactados/año</small>
+                    </div>
+                  </div>
+
+                  <!-- Nivel de impacto -->
+                  <div class="impact-level" id="impactLevel">
+                    <span class="level-badge" id="levelBadge"
+                      >Calculando...</span
+                    >
+                  </div>
+
+                  <!-- Equivalencias visuales -->
+                  <div class="equivalencias" id="equivalencias">
+                    <!-- Generado por calculator.js -->
+                  </div>
+
+                  <!-- Plan personalizado -->
+                  <div class="plan-personalizado">
+                    <h5>
+                      <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+                      Tu Plan de Acción Personalizado
+                    </h5>
+                    <ul id="recomendaciones" class="recomendaciones-list">
+                      <!-- Generado por calculator.js -->
+                    </ul>
+                  </div>
+
+                  <!-- Botón compartir -->
+                  <button
+                    class="btn-compartir"
+                    id="btnCompartir"
+                    aria-label="Compartir mi resultado de impacto ambiental"
+                  >
+                    <i class="fas fa-share-alt" aria-hidden="true"></i>
+                    Compartir mi Resultado
+                  </button>
+
+                  <!-- Panel de texto para copiar -->
+                  <div
+                    class="share-panel hidden"
+                    id="sharePanel"
+                    role="region"
+                    aria-live="polite"
+                  >
+                    <textarea
+                      id="shareText"
+                      class="share-textarea"
+                      readonly
+                      aria-label="Texto para compartir resultado"
+                    ></textarea>
+                    <button
+                      class="btn-copy"
+                      id="btnCopy"
+                      aria-label="Copiar texto al portapapeles"
+                    >
+                      <i class="fas fa-copy" aria-hidden="true"></i> Copiar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- TAB 4: APRENDE Y ACTÚA ---- -->
+        <div
+          class="tab-content"
+          id="tab-aprende"
+          role="tabpanel"
+          aria-labelledby="tab-btn-aprende"
+        >
+          <div class="tab-inner">
+            <!-- Biblioteca de recursos -->
+            <div data-aos="fade-up">
+              <h3>
+                <i class="fas fa-book-open" aria-hidden="true"></i>
+                Biblioteca de Recursos
+              </h3>
+              <p class="tab-desc">
+                Fuentes confiables sobre deforestación, conservación y ambiente.
+              </p>
+            </div>
+
+            <div class="recursos-grid" id="recursosGrid">
+              <!-- Recurso 1 -->
+              <a
+                href="https://www.fao.org/state-of-forests/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="recurso-card glass-card"
+                data-aos="fade-up"
+                data-aos-delay="50"
+              >
+                <div class="recurso-tipo tipo-informe">
+                  <i class="fas fa-file-pdf" aria-hidden="true"></i> Informe
+                </div>
+                <h4>Estado de los Bosques del Mundo 2022</h4>
+                <p>
+                  Análisis global de la FAO sobre tendencias forestales,
+                  carbono, biodiversidad y medios de vida.
+                </p>
+                <span class="recurso-fuente">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  FAO.org
+                </span>
+              </a>
+
+              <!-- Recurso 2 -->
+              <a
+                href="https://www.globalforestwatch.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="recurso-card glass-card"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <div class="recurso-tipo tipo-web">
+                  <i class="fas fa-globe" aria-hidden="true"></i> Plataforma Web
+                </div>
+                <h4>Global Forest Watch</h4>
+                <p>
+                  Monitoreo forestal en tiempo real. Sigue la pérdida de bosques
+                  semana a semana con datos satelitales.
+                </p>
+                <span class="recurso-fuente">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  globalforestwatch.org
+                </span>
+              </a>
+
+              <!-- Recurso 3 -->
+              <a
+                href="https://www.worldwildlife.org/threats/deforestation-and-forest-degradation"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="recurso-card glass-card"
+                data-aos="fade-up"
+                data-aos-delay="150"
+              >
+                <div class="recurso-tipo tipo-articulo">
+                  <i class="fas fa-newspaper" aria-hidden="true"></i> Artículo
+                </div>
+                <h4>Deforestación — WWF Global</h4>
+                <p>
+                  ¿Qué es la deforestación, cuáles son sus causas y qué hace WWF
+                  para detenerla?
+                </p>
+                <span class="recurso-fuente">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  worldwildlife.org
+                </span>
+              </a>
+
+              <!-- Recurso 4 -->
+              <a
+                href="https://www.ecosur.mx/investigacion/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="recurso-card glass-card"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
+                <div class="recurso-tipo tipo-ciencia">
+                  <i class="fas fa-microscope" aria-hidden="true"></i>
+                  Investigación
+                </div>
+                <h4>ECOSUR — Investigación Ambiental Chiapas</h4>
+                <p>
+                  El Colegio de la Frontera Sur publica estudios sobre
+                  ecosistemas tropicales, cambio climático y comunidades de
+                  Chiapas.
+                </p>
+                <span class="recurso-fuente">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  ecosur.mx
+                </span>
+              </a>
+
+              <!-- Recurso 5 -->
+              <a
+                href="https://www.nationalgeographic.com/environment/article/deforestation"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="recurso-card glass-card"
+                data-aos="fade-up"
+                data-aos-delay="250"
+              >
+                <div class="recurso-tipo tipo-articulo">
+                  <i class="fas fa-newspaper" aria-hidden="true"></i> Artículo
+                </div>
+                <h4>Deforestation Explained — National Geographic</h4>
+                <p>
+                  Explicación visual y accesible de las causas, consecuencias y
+                  soluciones a la deforestación mundial.
+                </p>
+                <span class="recurso-fuente">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  nationalgeographic.com
+                </span>
+              </a>
+
+              <!-- Recurso 6 -->
+              <a
+                href="https://www.ipcc.ch/srccl/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="recurso-card glass-card"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div class="recurso-tipo tipo-informe">
+                  <i class="fas fa-file-pdf" aria-hidden="true"></i> Informe
+                  Técnico
+                </div>
+                <h4>IPCC — Uso del Suelo y Cambio Climático</h4>
+                <p>
+                  Reporte especial del IPCC sobre uso del suelo, cambio de uso
+                  del suelo y silvicultura (SRCCL 2019).
+                </p>
+                <span class="recurso-fuente">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  ipcc.ch
+                </span>
+              </a>
+
+              <!-- Recurso 7 -->
+              <a
+                href="https://pronatura-sur.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="recurso-card glass-card"
+                data-aos="fade-up"
+                data-aos-delay="350"
+              >
+                <div class="recurso-tipo tipo-web">
+                  <i class="fas fa-globe" aria-hidden="true"></i> ONG Local
+                </div>
+                <h4>Pronatura Sur — Conservación en Chiapas</h4>
+                <p>
+                  ONG con décadas de trabajo en conservación comunitaria en la
+                  Selva Lacandona y la costa chiapaneca.
+                </p>
+                <span class="recurso-fuente">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  pronatura-sur.org
+                </span>
+              </a>
+
+              <!-- Recurso 8 -->
+              <a
+                href="https://www.gob.mx/conafor"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="recurso-card glass-card"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <div class="recurso-tipo tipo-gobierno">
+                  <i class="fas fa-landmark" aria-hidden="true"></i> Gobierno
+                </div>
+                <h4>CONAFOR — Comisión Nacional Forestal</h4>
+                <p>
+                  Programas de reforestación, PSA, certificación y apoyos
+                  forestales del gobierno federal mexicano.
+                </p>
+                <span class="recurso-fuente">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  gob.mx/conafor
+                </span>
+              </a>
+            </div>
+
+            <!-- Blog simulado con acordeón -->
+            <div class="blog-section" data-aos="fade-up">
+              <h3>
+                <i class="fas fa-pen-nib" aria-hidden="true"></i>
+                Blog del Proyecto
+              </h3>
+
+              <div class="blog-acordeon" id="blogAcordeon">
+                <!-- Artículo 1 -->
+                <div class="blog-item">
+                  <button
+                    class="blog-btn"
+                    aria-expanded="false"
+                    aria-controls="blog1-content"
+                  >
+                    <div class="blog-btn-inner">
+                      <span class="blog-tag">Análisis</span>
+                      <h4>Chiapas: ¿Por Qué Perdemos Tanto Bosque?</h4>
+                      <span class="blog-date">Febrero 2026</span>
+                    </div>
+                    <i
+                      class="fas fa-chevron-down blog-chevron"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                  <div class="blog-content" id="blog1-content" hidden>
+                    <p>
+                      Chiapas es el estado con mayor biodiversidad de México:
+                      alberga el 30% de las especies vegetales y el 40% de las
+                      aves del país. Sin embargo, en las últimas tres décadas ha
+                      perdido más de 1.2 millones de hectáreas de bosque, una
+                      superficie mayor al estado de Puerto Rico.
+                    </p>
+                    <p>
+                      Las causas son complejas e interrelacionadas. La ganadería
+                      extensiva —impulsada por subsidios gubernamentales hasta
+                      los años 90— convirtió vastas extensiones de selva en
+                      pastizales improductivos. La agricultura de
+                      roza-tumba-quema, tradicional pero intensificada por la
+                      presión demográfica, sigue fragmentando los remanentes
+                      forestales. A esto se suma la extracción ilegal de madera,
+                      que PROFEPA estima en 20 millones de m³ anuales a nivel
+                      nacional.
+                    </p>
+                    <p>
+                      Pero hay esperanza. Comunidades como Nuevo San Juan
+                      Parangaricutiro en Michoacán —y en Chiapas, ejidos como
+                      Laguna Bélgica— demuestran que es posible aprovechar los
+                      bosques de forma sustentable y rentable. La clave está en
+                      fortalecer la gobernanza comunitaria y garantizar que los
+                      habitantes del bosque reciban un beneficio real por
+                      conservarlo.
+                    </p>
+                    <div class="blog-refs">
+                      <strong>Referencias:</strong> CONAFOR (2023); Hansen et
+                      al., Science (2013); INEGI Carta de Uso de Suelo y
+                      Vegetación Serie VII
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Artículo 2 -->
+                <div class="blog-item">
+                  <button
+                    class="blog-btn"
+                    aria-expanded="false"
+                    aria-controls="blog2-content"
+                  >
+                    <div class="blog-btn-inner">
+                      <span class="blog-tag">Soluciones</span>
+                      <h4>
+                        Agroforestería: Cultivar y Conservar al Mismo Tiempo
+                      </h4>
+                      <span class="blog-date">Enero 2026</span>
+                    </div>
+                    <i
+                      class="fas fa-chevron-down blog-chevron"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                  <div class="blog-content" id="blog2-content" hidden>
+                    <p>
+                      La agroforestería es la práctica de integrar árboles en
+                      sistemas agrícolas y ganaderos. No es una idea nueva: los
+                      pueblos mayas la practicaban hace milenios con sus milpas,
+                      que combinaban maíz, calabaza y frijol bajo la sombra de
+                      árboles de cacao y zapote.
+                    </p>
+                    <p>
+                      Hoy, la ciencia confirma lo que las comunidades siempre
+                      supieron: los sistemas agroforestales producen más
+                      alimento por hectárea que los monocultivos, capturan hasta
+                      5 toneladas de CO₂ por hectárea por año, y mantienen
+                      servicios ecosistémicos como la regulación del agua y el
+                      control de plagas. En Chiapas, productores de café bajo
+                      sombra en Los Altos obtienen precios premium en mercados
+                      internacionales gracias a las certificaciones de
+                      Rainforest Alliance.
+                    </p>
+                    <p>
+                      ECOSUR en San Cristóbal de las Casas ha desarrollado
+                      modelos agroforestales adaptados específicamente a las
+                      condiciones edafoclimáticas de la selva baja y media de
+                      Chiapas, combinando cedro, caoba y ramón con cultivos de
+                      subsistencia. Los resultados son prometedores: familias
+                      que antes talaban por necesidad hoy lideran grupos de
+                      productores sustentables.
+                    </p>
+                    <div class="blog-refs">
+                      <strong>Referencias:</strong> ECOSUR (2022); Schroth et
+                      al., Agroforestry Systems (2019); Rainforest Alliance
+                      Annual Report 2023
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Artículo 3 -->
+                <div class="blog-item">
+                  <button
+                    class="blog-btn"
+                    aria-expanded="false"
+                    aria-controls="blog3-content"
+                  >
+                    <div class="blog-btn-inner">
+                      <span class="blog-tag">Acción</span>
+                      <h4>
+                        Cómo un Estudiante Universitario Puede Marcar la
+                        Diferencia
+                      </h4>
+                      <span class="blog-date">Diciembre 2025</span>
+                    </div>
+                    <i
+                      class="fas fa-chevron-down blog-chevron"
+                      aria-hidden="true"
+                    ></i>
+                  </button>
+                  <div class="blog-content" id="blog3-content" hidden>
+                    <p>
+                      "Soy un estudiante en Tuxtla, ¿qué puedo hacer yo
+                      realmente?" Esta pregunta tiene respuestas concretas y
+                      poderosas. Primero: reducir el consumo de carne de res. La
+                      producción de 1 kg de carne genera 60 kg de CO₂
+                      equivalente. Si la mitad de los 12,000 estudiantes de la
+                      UNACH redujera su consumo semanal de res en 300 gramos,
+                      evitaríamos la emisión de más de 500 toneladas de CO₂ al
+                      año.
+                    </p>
+                    <p>
+                      Segundo: elige productos con certificación forestal FSC
+                      cuando compres cuadernos y papel. Tercero: apoya el café
+                      de sombra chiapaneco en lugar de marcas internacionales
+                      que no garantizan prácticas sustentables. Cuarto:
+                      participa en brigadas de reforestación; CONAFOR y
+                      Pronatura Sur organizan jornadas mensuales en municipios
+                      del estado abiertas a voluntarios universitarios.
+                    </p>
+                    <p>
+                      Pero la acción más poderosa es hablar. Cada conversación
+                      sobre el bosque que tienes con tu familia, cada
+                      publicación informada que compartes, cada pregunta que
+                      haces en clase, multiplica el impacto. Los movimientos de
+                      conservación más exitosos de México nacieron de
+                      comunidades universitarias que decidieron que el
+                      conocimiento no bastaba: había que actuar.
+                    </p>
+                    <div class="blog-refs">
+                      <strong>Referencias:</strong> Poore et al., Science
+                      (2018); UNACH Plan de Desarrollo 2022-2026; CONAFOR
+                      Brigadas de Voluntarios 2024
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Foro simulado -->
+            <div class="foro-section glass-card" data-aos="fade-up">
+              <h3>
+                <i class="fas fa-comments" aria-hidden="true"></i>
+                Foro Comunitario
+              </h3>
+              <p>
+                Comparte tus ideas, reflexiones y compromisos con la comunidad
+                Bosque Digital.
+              </p>
+
+              <!-- Formulario del foro -->
+              <form
+                id="foroForm"
+                class="foro-form"
+                novalidate
+                aria-label="Formulario para publicar en el foro"
+              >
+                <div class="foro-form-row">
+                  <div class="form-group">
+                    <label for="foroNombre">Tu nombre</label>
+                    <input
+                      type="text"
+                      id="foroNombre"
+                      class="form-input"
+                      placeholder="Nombre o apodo"
+                      maxlength="50"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="foroMensaje">Tu mensaje</label>
+                  <textarea
+                    id="foroMensaje"
+                    class="form-textarea"
+                    placeholder="Escribe una reflexión, compromiso, pregunta o idea..."
+                    rows="3"
+                    maxlength="300"
+                    required
+                    aria-required="true"
+                  ></textarea>
+                  <span class="char-count" id="foroCharCount">0/300</span>
+                </div>
+                <button
+                  type="submit"
+                  class="btn-publicar"
+                  aria-label="Publicar mensaje en el foro"
+                >
+                  <i class="fas fa-paper-plane" aria-hidden="true"></i> Publicar
+                </button>
+              </form>
+
+              <!-- Lista de comentarios -->
+              <div
+                id="forumComments"
+                class="forum-comments"
+                role="feed"
+                aria-label="Mensajes del foro"
+              >
+                <!-- Generado dinámicamente por main.js desde localStorage -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       SECCIÓN 4 — ESPACIO COMUNITARIO
+  ======================================================== -->
+    <section
+      id="comunidad"
+      class="section comunidad-section"
+      aria-labelledby="comunidad-titulo"
+      data-aos="fade-up"
+    >
+      <div class="container">
+        <!-- Encabezado -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-tag">
+            <i class="fas fa-users" aria-hidden="true"></i> Comunidad
+          </span>
+          <h2 id="comunidad-titulo" class="section-title">
+            Espacio Comunitario
+          </h2>
+          <p class="section-subtitle">
+            Únete a la comunidad Bosque Digital, desbloquea insignias y suma tu
+            impacto al colectivo.
+          </p>
+        </div>
+
+        <div class="comunidad-layout">
+          <!-- Panel de registro -->
+          <div class="registro-panel glass-card" data-aos="fade-right">
+            <div id="registroBienvenida" class="bienvenida hidden">
+              <div class="bienvenida-icon" aria-hidden="true">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <h3>¡Bienvenid@, <span id="userName">Explorador</span>!</h3>
+              <p>
+                Ya eres parte de la comunidad Bosque Digital. Sigue explorando
+                para desbloquear más insignias.
+              </p>
+              <button
+                class="btn-logout"
+                id="btnLogout"
+                aria-label="Cerrar sesión"
+              >
+                <i class="fas fa-sign-out-alt" aria-hidden="true"></i> Salir
+              </button>
+            </div>
+
+            <div id="registroForm">
+              <h3>
+                <i class="fas fa-user-plus" aria-hidden="true"></i>
+                Únete a la Comunidad
+              </h3>
+              <p>
+                Regístrate para guardar tus insignias y aparecer en el tablero
+                colectivo.
+              </p>
+
+              <form
+                id="formRegistro"
+                novalidate
+                aria-label="Formulario de registro en la comunidad"
+              >
+                <div class="form-group">
+                  <label for="regNombre">Nombre completo</label>
+                  <input
+                    type="text"
+                    id="regNombre"
+                    class="form-input"
+                    placeholder="Tu nombre"
+                    required
+                    aria-required="true"
+                    maxlength="80"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="regCorreo">Correo electrónico</label>
+                  <input
+                    type="email"
+                    id="regCorreo"
+                    class="form-input"
+                    placeholder="correo@unach.mx"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn-registrar"
+                  aria-label="Registrarse en la comunidad Bosque Digital"
+                >
+                  <i class="fas fa-seedling" aria-hidden="true"></i>
+                  Unirme al Bosque Digital
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Panel de insignias -->
+          <div class="badges-panel" data-aos="fade-up">
+            <h3>
+              <i class="fas fa-medal" aria-hidden="true"></i>
+              Tus Insignias
+            </h3>
+            <p class="badges-desc">
+              Desbloquea insignias completando acciones en el sitio.
+            </p>
+
+            <div
+              class="badges-grid"
+              id="badgesGrid"
+              role="list"
+              aria-label="Sistema de insignias"
+            >
+              <!-- Badge 1: Explorador -->
+              <div
+                class="badge-item locked"
+                id="badge-explorador"
+                role="listitem"
+                data-badge="explorador"
+              >
+                <div class="badge-icon" aria-hidden="true">
+                  <i class="fas fa-compass"></i>
+                </div>
+                <div class="badge-info">
+                  <h4>Explorador</h4>
+                  <p>Recorre toda la página de inicio a fin</p>
+                  <span class="badge-status">🔒 Bloqueada</span>
+                </div>
+              </div>
+
+              <!-- Badge 2: Consciente -->
+              <div
+                class="badge-item locked"
+                id="badge-consciente"
+                role="listitem"
+                data-badge="consciente"
+              >
+                <div class="badge-icon" aria-hidden="true">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <div class="badge-info">
+                  <h4>Consciente</h4>
+                  <p>Usa la calculadora de impacto</p>
+                  <span class="badge-status">🔒 Bloqueada</span>
+                </div>
+              </div>
+
+              <!-- Badge 3: Comprometido -->
+              <div
+                class="badge-item locked"
+                id="badge-comprometido"
+                role="listitem"
+                data-badge="comprometido"
+              >
+                <div class="badge-icon" aria-hidden="true">
+                  <i class="fas fa-hands-helping"></i>
+                </div>
+                <div class="badge-info">
+                  <h4>Comprometido</h4>
+                  <p>Regístrate como voluntario en el mapa</p>
+                  <span class="badge-status">🔒 Bloqueada</span>
+                </div>
+              </div>
+
+              <!-- Badge 4: Legislador -->
+              <div
+                class="badge-item locked"
+                id="badge-legislador"
+                role="listitem"
+                data-badge="legislador"
+              >
+                <div class="badge-icon" aria-hidden="true">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="badge-info">
+                  <h4>Legislador</h4>
+                  <p>Busca una ley en el módulo Legisla</p>
+                  <span class="badge-status">🔒 Bloqueada</span>
+                </div>
+              </div>
+
+              <!-- Badge especial: Defensor del Bosque -->
+              <div
+                class="badge-item locked badge-special"
+                id="badge-defensor"
+                role="listitem"
+                data-badge="defensor"
+              >
+                <div class="badge-icon" aria-hidden="true">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="badge-info">
+                  <h4>Defensor del Bosque</h4>
+                  <p>Desbloquea todas las insignias anteriores</p>
+                  <span class="badge-status">🏆 Insignia Maestra</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tablero de impacto colectivo -->
+        <div class="impacto-colectivo glass-card" data-aos="fade-up">
+          <h3>
+            <i class="fas fa-globe" aria-hidden="true"></i>
+            Impacto Colectivo Bosque Digital
+          </h3>
+          <p>
+            Cada acción suma. Este es el impacto acumulado de nuestra comunidad:
+          </p>
+
+          <div class="impacto-stats-grid">
+            <div
+              class="impacto-stat"
+              role="region"
+              aria-label="Usuarios registrados"
+            >
+              <span class="impacto-num" data-target="1247" id="colUsuarios"
+                >0</span
+              >
+              <span class="impacto-label">Usuarios Registrados</span>
+            </div>
+            <div
+              class="impacto-stat"
+              role="region"
+              aria-label="Árboles plantados"
+            >
+              <span class="impacto-num" data-target="8934" id="colArboles"
+                >0</span
+              >
+              <span class="impacto-label">Árboles Plantados</span>
+            </div>
+            <div
+              class="impacto-stat"
+              role="region"
+              aria-label="Voluntarios activos"
+            >
+              <span class="impacto-num" data-target="342" id="colVoluntarios"
+                >0</span
+              >
+              <span class="impacto-label">Voluntarios Activos</span>
+            </div>
+            <div
+              class="impacto-stat"
+              role="region"
+              aria-label="Toneladas de CO2 evitadas"
+            >
+              <span class="impacto-num" data-target="56" id="colCO2">0</span>
+              <span class="impacto-label">Ton CO₂ Evitadas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <!-- Footer superior -->
+        <div class="footer-top">
+          <!-- Logo y descripción -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <i class="fas fa-tree" aria-hidden="true"></i>
+              <span>Bosque Digital</span>
+            </div>
+            <p class="footer-tagline">Conocer para Proteger</p>
+            <p class="footer-desc">
+              Plataforma educativa interactiva desarrollada por estudiantes de
+              la UNACH para concientizar sobre la deforestación global desde
+              Chiapas, México.
+            </p>
+            <!-- Redes sociales -->
+            <div class="footer-social" aria-label="Redes sociales del proyecto">
+              <a
+                href="#"
+                class="social-link"
+                aria-label="Facebook del proyecto Bosque Digital"
+              >
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                class="social-link"
+                aria-label="Instagram del proyecto Bosque Digital"
+              >
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                class="social-link"
+                aria-label="Twitter del proyecto Bosque Digital"
+              >
+                <i class="fab fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                class="social-link"
+                aria-label="YouTube del proyecto Bosque Digital"
+              >
+                <i class="fab fa-youtube" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Instituciones -->
+          <div class="footer-instituciones">
+            <h4>Instituciones</h4>
+            <ul class="footer-list">
+              <li>
+                <a
+                  href="https://www.unach.mx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-university" aria-hidden="true"></i>
+                  UNACH — Universidad Autónoma de Chiapas
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.fao.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                  FAO — Organización de las Naciones Unidas para la Alimentación
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.globalforestwatch.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-satellite" aria-hidden="true"></i>
+                  Global Forest Watch — WRI
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.ecosur.mx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-leaf" aria-hidden="true"></i>
+                  ECOSUR — El Colegio de la Frontera Sur
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Equipo -->
+          <div class="footer-equipo">
+            <h4>Equipo del Proyecto</h4>
+            <ul class="footer-equipo-list">
+              <li>
+                <i class="fas fa-user" aria-hidden="true"></i> Pardo Velázquez,
+                Ángel de Jesús
+              </li>
+              <li>
+                <i class="fas fa-user" aria-hidden="true"></i> Integrante 2 —
+                UNACH
+              </li>
+              <li>
+                <i class="fas fa-user" aria-hidden="true"></i> Integrante 3 —
+                UNACH
+              </li>
+              <li>
+                <i class="fas fa-user" aria-hidden="true"></i> Integrante 4 —
+                UNACH
+              </li>
+              <li>
+                <i class="fas fa-user" aria-hidden="true"></i> Integrante 5 —
+                UNACH
+              </li>
+              <li>
+                <i class="fas fa-user" aria-hidden="true"></i> Integrante 6 —
+                UNACH
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Referencias bibliográficas -->
+        <div class="footer-referencias" data-aos="fade-up">
+          <h4>
+            <i class="fas fa-book" aria-hidden="true"></i> Referencias
+            Bibliográficas
+          </h4>
+          <ul class="referencias-list">
+            <li>
+              FAO (2020).
+              <em
+                >Evaluación de los Recursos Forestales Mundiales 2020 — Informe
+                Principal</em
+              >. Roma.
+            </li>
+            <li>
+              Hansen, M.C. et al. (2013). "High-Resolution Global Maps of
+              21st-Century Forest Cover Change". <em>Science</em>, 342(6160),
+              850-853.
+            </li>
+            <li>
+              IPCC (2019).
+              <em>Special Report on Climate Change and Land (SRCCL)</em>.
+              Cambridge University Press.
+            </li>
+            <li>
+              Global Carbon Project (2023). <em>Carbon Budget 2023</em>. Earth
+              System Science Data.
+            </li>
+            <li>
+              WWF (2022). <em>Living Planet Report 2022</em>. Gland, Suiza.
+            </li>
+            <li>
+              CONAFOR (2023).
+              <em
+                >Inventario Nacional Forestal y de Suelos de México
+                2009-2022</em
+              >. Guadalajara.
+            </li>
+            <li>
+              ECOSUR (2022).
+              <em>Diagnóstico del Sector Forestal de Chiapas</em>. San Cristóbal
+              de las Casas.
+            </li>
+            <li>
+              Poore, J. et al. (2018). "Reducing food's environmental impacts
+              through producers and consumers". <em>Science</em>, 360(6392),
+              987-992.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Footer inferior -->
+        <div class="footer-bottom">
+          <p>
+            © 2026 Bosque Digital — UNACH, Tuxtla Gutiérrez, Chiapas, México.
+            Proyecto académico de libre acceso.
+            <a href="#" aria-label="Política de privacidad"
+              >Política de Privacidad</a
+            >
+          </p>
+          <p class="footer-tech">
+            Construido con
+            <i
+              class="fas fa-heart"
+              aria-hidden="true"
+              style="color: #e74c3c"
+            ></i>
+            y tecnologías web abiertas: HTML5 + CSS3 + JavaScript · Leaflet.js ·
+            Chart.js · AOS.js
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal de tooltip para información de gráficas -->
+    <div
+      id="tooltipModal"
+      class="modal-overlay hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tooltipModalTitle"
+    >
+      <div class="modal-box glass-card">
+        <button
+          class="modal-close"
+          id="modalClose"
+          aria-label="Cerrar ventana de información"
+        >
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <h4 id="tooltipModalTitle">Información</h4>
+        <p id="tooltipModalContent"></p>
+      </div>
+    </div>
+
+    <!-- Toast de notificación -->
+    <div id="toastNotif" class="toast hidden" role="alert" aria-live="polite">
+      <div class="toast-inner">
+        <i class="fas fa-check-circle toast-icon" aria-hidden="true"></i>
+        <span id="toastMsg">Acción completada</span>
+      </div>
+    </div>
+
+    <!-- ========================================================
+       SCRIPTS — Todo JS externo al final del body
+  ======================================================== -->
+    <!-- Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <!-- AOS.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Scripts propios del proyecto (el orden importa) -->
+    <script src="js/badges.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

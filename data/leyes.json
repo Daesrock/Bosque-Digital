@@ -1,0 +1,228 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ley General de Desarrollo Forestal Sustentable",
+    "siglas": "LGDFS",
+    "año": 2018,
+    "resumen": "Regula y fomenta la conservación, protección, restauración, producción, ordenación, cultivo, manejo y aprovechamiento de los ecosistemas forestales del país. Establece el marco jurídico para combatir la deforestación ilegal y promover la reforestación en México. Define derechos y obligaciones de ejidatarios, comunidades y propietarios forestales.",
+    "enlace": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGDFS.pdf",
+    "categorias": [
+      "forestal",
+      "conservación",
+      "aprovechamiento",
+      "reforestación"
+    ],
+    "palabrasClave": [
+      "forestal",
+      "bosques",
+      "aprovechamiento",
+      "reforestación",
+      "deforestación",
+      "madera",
+      "ejidos",
+      "comunidades"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Ley General del Equilibrio Ecológico y la Protección al Ambiente",
+    "siglas": "LGEEPA",
+    "año": 1988,
+    "resumen": "Es la ley ambiental marco de México. Establece las bases para preservar y restaurar el equilibrio ecológico, proteger el ambiente y garantizar el derecho de toda persona a vivir en un medio ambiente sano. Define áreas naturales protegidas, evaluación de impacto ambiental y delitos ecológicos.",
+    "enlace": "https://www.diputados.gob.mx/LeyesBiblio/pdf/148.pdf",
+    "categorias": [
+      "equilibrio ecológico",
+      "áreas naturales",
+      "impacto ambiental",
+      "ley marco"
+    ],
+    "palabrasClave": [
+      "equilibrio",
+      "ecológico",
+      "protección",
+      "ambiente",
+      "áreas naturales",
+      "impacto ambiental",
+      "biodiversidad"
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "NOM-152-SEMARNAT-2006",
+    "siglas": "NOM-152",
+    "año": 2006,
+    "resumen": "Establece los lineamientos, criterios y especificaciones de los contenidos de los programas de manejo forestal para el aprovechamiento de recursos forestales maderables. Obliga a los solicitantes de permisos forestales a presentar planes de manejo sustentable que incluyan medidas de reforestación. Es fundamental para controlar el impacto de la industria maderera.",
+    "enlace": "https://dof.gob.mx/nota_detalle.php?codigo=5013575&fecha=17/10/2008",
+    "categorias": [
+      "norma oficial",
+      "manejo forestal",
+      "permisos",
+      "maderables"
+    ],
+    "palabrasClave": [
+      "NOM",
+      "manejo forestal",
+      "aprovechamiento",
+      "maderables",
+      "programas",
+      "permisos",
+      "sustentable"
+    ]
+  },
+  {
+    "id": 4,
+    "nombre": "Ley General de Vida Silvestre",
+    "siglas": "LGVS",
+    "año": 2000,
+    "resumen": "Establece la concurrencia del gobierno federal, estados y municipios en la conservación y aprovechamiento sustentable de la vida silvestre. Protege especies en riesgo de extinción y sus hábitats, incluyendo los ecosistemas forestales donde habitan. Regula el comercio, captura y exportación de flora y fauna silvestre.",
+    "enlace": "https://www.diputados.gob.mx/LeyesBiblio/pdf/146.pdf",
+    "categorias": [
+      "vida silvestre",
+      "biodiversidad",
+      "hábitat",
+      "especies en riesgo"
+    ],
+    "palabrasClave": [
+      "vida silvestre",
+      "biodiversidad",
+      "especies",
+      "hábitat",
+      "extinción",
+      "fauna",
+      "flora",
+      "conservación"
+    ]
+  },
+  {
+    "id": 5,
+    "nombre": "NOM-059-SEMARNAT-2010",
+    "siglas": "NOM-059",
+    "año": 2010,
+    "resumen": "Determina las especies y subespecies de flora y fauna silvestres terrestres y acuáticas en riesgo en México. Clasifica las especies como en peligro de extinción, amenazadas, sujetas a protección especial o probablemente extintas. Sirve como referencia obligatoria para evaluar impacto ambiental en proyectos que puedan afectar bosques.",
+    "enlace": "https://dof.gob.mx/nota_detalle.php?codigo=5173091&fecha=30/12/2010",
+    "categorias": ["norma oficial", "especies en riesgo", "fauna", "flora"],
+    "palabrasClave": [
+      "NOM-059",
+      "especies en riesgo",
+      "peligro de extinción",
+      "amenazadas",
+      "protección especial",
+      "flora",
+      "fauna"
+    ]
+  },
+  {
+    "id": 6,
+    "nombre": "Ley General de Cambio Climático",
+    "siglas": "LGCC",
+    "año": 2012,
+    "resumen": "Regula las emisiones de gases de efecto invernadero, incluyendo las provenientes de la deforestación. Establece metas de reducción de emisiones y obliga a incorporar la mitigación del cambio climático en políticas de uso del suelo. Incluye el programa de pago por servicios ambientales como incentivo para conservar bosques.",
+    "enlace": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LGCC.pdf",
+    "categorias": [
+      "cambio climático",
+      "emisiones GEI",
+      "mitigación",
+      "servicios ambientales"
+    ],
+    "palabrasClave": [
+      "cambio climático",
+      "emisiones",
+      "carbono",
+      "GEI",
+      "mitigación",
+      "adaptación",
+      "servicios ambientales",
+      "REDD+"
+    ]
+  },
+  {
+    "id": 7,
+    "nombre": "Ley Agraria",
+    "siglas": "LA",
+    "año": 1992,
+    "resumen": "Regula la tenencia de la tierra en ejidos y comunidades agrarias, que poseen una gran parte de los bosques de México. Sus disposiciones sobre uso del suelo impactan directamente en la conservación o deforestación de terrenos forestales. Establece el marco para que ejidatarios puedan recibir pagos por servicios ambientales.",
+    "enlace": "https://www.diputados.gob.mx/LeyesBiblio/pdf/13.pdf",
+    "categorias": [
+      "agrario",
+      "ejidos",
+      "tenencia de la tierra",
+      "uso del suelo"
+    ],
+    "palabrasClave": [
+      "agraria",
+      "ejidos",
+      "comunidades",
+      "tenencia",
+      "tierra",
+      "uso del suelo",
+      "ejidatarios"
+    ]
+  },
+  {
+    "id": 8,
+    "nombre": "Programa Nacional Forestal (PRONAFOR)",
+    "siglas": "PRONAFOR",
+    "año": 2022,
+    "resumen": "Programa gubernamental que otorga apoyos económicos para conservación, restauración y aprovechamiento forestal sustentable. Incluye subsidios para reforestación, combate a incendios, certificación forestal y cadenas productivas forestales. Tiene presencia en Chiapas a través de la delegación regional de CONAFOR.",
+    "enlace": "https://www.gob.mx/conafor/acciones-y-programas/programa-nacional-forestal-pronafor",
+    "categorias": ["programa federal", "subsidios", "reforestación", "CONAFOR"],
+    "palabrasClave": [
+      "PRONAFOR",
+      "CONAFOR",
+      "forestal",
+      "subsidios",
+      "apoyos",
+      "reforestación",
+      "incendios",
+      "programa"
+    ]
+  },
+  {
+    "id": 9,
+    "nombre": "Decreto de Áreas Naturales Protegidas — Selva Lacandona",
+    "siglas": "ANP-Lacandona",
+    "año": 1978,
+    "resumen": "Decreto presidencial que establece la Reserva de la Biosfera Montes Azules en la Selva Lacandona, Chiapas, como área natural protegida de carácter federal. Protege el último remanente de selva tropical alta de México y una de las regiones con mayor biodiversidad del planeta. Prohíbe el cambio de uso de suelo y establece zonas de amortiguamiento.",
+    "enlace": "https://dof.gob.mx/nota_to_imagen_fs.php?codnota=4638523&fecha=12/01/1978&cod_diario=206052",
+    "categorias": [
+      "áreas naturales protegidas",
+      "Chiapas",
+      "selva",
+      "biosfera"
+    ],
+    "palabrasClave": [
+      "Montes Azules",
+      "Lacandona",
+      "selva",
+      "Chiapas",
+      "biosfera",
+      "reserva",
+      "protegida",
+      "ANP"
+    ]
+  },
+  {
+    "id": 10,
+    "nombre": "Ley de Transición Energética",
+    "siglas": "LTE",
+    "año": 2015,
+    "resumen": "Promueve el uso de energías limpias y la eficiencia energética para reducir emisiones de GEI, incluyendo las causadas indirectamente por deforestación. Establece metas de generación de energía limpia que pueden disminuir la presión sobre los bosques por extracción de leña. Incentiva proyectos de bioenergía sustentable que no impliquen deforestación.",
+    "enlace": "https://www.diputados.gob.mx/LeyesBiblio/pdf/LTE.pdf",
+    "categorias": [
+      "energía",
+      "transición energética",
+      "emisiones",
+      "bioenergía"
+    ],
+    "palabrasClave": [
+      "energía",
+      "renovable",
+      "transición",
+      "emisiones",
+      "leña",
+      "bioenergía",
+      "limpia",
+      "eficiencia"
+    ]
+  }
+]
