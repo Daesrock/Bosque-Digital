@@ -139,24 +139,6 @@ La API de Global Forest Watch permite acceder a datos de pérdida de cobertura a
 
 ---
 
-## 👥 Equipo
-
-| Nombre                              | Rol                           |
-| ----------------------------------- | ----------------------------- |
-| **Pardo Velázquez, Ángel de Jesús** | Líder de proyecto, desarrollo |
-| Integrante 2                        | Desarrollo frontend           |
-| Integrante 3                        | Diseño UX/UI                  |
-| Integrante 4                        | Investigación y contenidos    |
-| Integrante 5                        | Datos y visualizaciones       |
-| Integrante 6                        | QA y pruebas                  |
-
-**Institución**: Universidad Autónoma de Chiapas (UNACH)  
-**Carrera**: [Nombre de la carrera]  
-**Materia**: [Nombre de la materia]  
-**Semestre**: 2026-1
-
----
-
 ## 📄 Licencia
 
 Este proyecto es de carácter académico y educativo. Los datos utilizados son de fuentes públicas con sus respectivos créditos. El código es de libre uso con fines educativos y no comerciales.
