@@ -225,40 +225,26 @@
               Mapa de Pérdida de Cobertura Forestal
             </h3>
             <p class="map-description">
-              Visualiza la pérdida de bosques por región. Haz clic en el mapa
-              para ver estadísticas detalladas. Datos: Global Forest Watch /
-              Hansen et al.
+              Accede al siguiente enlacde donde podras observar e interactura con un mapa el cual muiestra el cambio en la cobertura forestal, puedes abrir el
+              enlace oficial del mapa en una nueva pestaña.
             </p>
           </div>
 
-          <!-- Mapa embebido oficial de Global Forest Watch -->
-          <div
-            class="mapa-gfw-container"
-            style="
-              position: relative;
-              width: 100%;
-              height: 650px;
-              border-radius: 12px;
-              overflow: hidden;
-            "
-          >
-            <iframe
-              src="https://www.globalforestwatch.org/embed/map/country/MEX/?map=eyJjZW50ZXIiOnsibGF0IjoxNi43NSwibG5nIjotOTMuMTF9LCJ6b29tIjo3LCJkYXRhc2V0cyI6W3siZGF0YXNldCI6InBvbGl0aWNhbC1ib3VuZGFyaWVzIiwib3BhY2l0eSI6MSwidmlzaWJpbGl0eSI6dHJ1ZSwibGF5ZXJzIjpbImRpc3B1dGVkLXBvbGl0aWNhbC1ib3VuZGFyaWVzIiwicG9saXRpY2FsLWJvdW5kYXJpZXMiXX0seyJkYXRhc2V0IjoidHJlZS1jb3Zlci1sb3NzIiwibGF5ZXJzIjpbInRyZWUtY292ZXItbG9zcyJdLCJvcGFjaXR5IjoxLCJ2aXNpYmlsaXR5Ijp0cnVlfV19"
-              width="100%"
-              height="650"
-              frameborder="0"
-              style="border: none"
-              allowfullscreen
-            ></iframe>
-          </div>
-          <p class="mapa-nota">
-            🌍 Mapa interactivo — puedes hacer zoom, cambiar capas y explorar la
-            pérdida forestal por año directamente en el mapa. Datos:
-            <a href="https://www.globalforestwatch.org" target="_blank"
-              >Global Forest Watch</a
+          <div class="mapa-redirect" style="text-align:center; padding:24px 20px 10px;">
+            <p style="margin-bottom:16px; color:var(--texto-medio);">
+              Si quieres ver el cambio, puedes acceder al siguiente enlace.
+            </p>
+            <a
+              href="https://www.globalforestwatch.org/map"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-cta"
+              aria-label="Abrir mapa oficial de cambio forestal en una nueva pestaña"
             >
-            / Hansen et al.
-          </p>
+              <i class="fas fa-up-right-from-square" aria-hidden="true"></i>
+              Ver el mapa de cambio forestal
+            </a>
+          </div>
         </div>
 
         <!-- 2b. Gráficas Animadas de Causas -->
@@ -1965,6 +1951,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <!-- AOS.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
     <!-- Scripts propios del proyecto (el orden importa) -->
     <script src="js/badges.js"></script>
     <script src="js/calculator.js"></script>
