@@ -821,6 +821,18 @@ function initRegistro() {
   const usuario = obtenerUsuario();
   if (usuario) {
     mostrarBienvenida(usuario);
+  } else {
+    const nombreGuardado = localStorage.getItem('nombre');
+    const emailGuardado = localStorage.getItem('email');
+    if (nombreGuardado && emailGuardado) {
+      const usuarioAuth = {
+        nombre: nombreGuardado,
+        correo: emailGuardado,
+        fecha: new Date().toISOString(),
+      };
+      localStorage.setItem("bd_usuario", JSON.stringify(usuarioAuth));
+      mostrarBienvenida(usuarioAuth);
+    }
   }
 
   form.addEventListener("submit", (e) => {

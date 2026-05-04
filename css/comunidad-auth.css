@@ -1,0 +1,758 @@
+/**
+ * css/comunidad-auth.css - Estilos para autenticación, feed de publicaciones y comentarios
+ */
+
+/* =========================================================
+   MODALES
+========================================================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: white;
+  margin: auto;
+  padding: 0;
+  border-radius: 12px;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: slideUp 0.3s ease;
+}
+
+.modal-close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+/* =========================================================
+   MODAL DE AUTENTICACIÓN
+========================================================= */
+
+.modal-auth {
+  max-width: 450px;
+  padding: 30px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.auth-tab-btn {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #999;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.auth-tab-btn.active {
+  color: #2d8659;
+  border-bottom-color: #2d8659;
+}
+
+.auth-tab-btn:hover {
+  color: #333;
+}
+
+.auth-tab-content {
+  display: none;
+}
+
+.auth-tab-content.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-auth h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+/* =========================================================
+   FORMULARIOS
+========================================================= */
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #2d8659;
+  box-shadow: 0 0 0 3px rgba(45, 134, 89, 0.1);
+}
+
+.form-hint {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #666;
+  text-align: center;
+}
+
+.form-hint a {
+  color: #2d8659;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.form-hint a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: #2d8659;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background-color: #1f5f3f;
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+  background-color: #f0f0f0;
+  color: #2d8659;
+}
+
+/* =========================================================
+   DROPDOWN DE USUARIO
+========================================================= */
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  min-width: 250px;
+  z-index: 900;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.user-dropdown.open {
+  max-height: 400px;
+  padding: 15px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+}
+
+.dropdown-header strong {
+  display: block;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdown-header small {
+  display: block;
+  color: #999;
+  font-size: 12px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+  color: #2d8659;
+}
+
+.dropdown-item i {
+  width: 16px;
+}
+
+.btn-logout {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  color: #e74c3c;
+}
+
+.btn-logout:hover {
+  background-color: #ffe6e0;
+}
+
+.feed-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #f7faf8;
+  border: 1px solid #e0ece6;
+  color: #2d6a4f;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-size: 13px;
+}
+
+.feed-filter-bar .btn-clear-filter {
+  background: none;
+  border: none;
+  color: #2d8659;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.feed-filter-bar .btn-clear-filter:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   FEED DE PUBLICACIONES
+========================================================= */
+
+.feed-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+.crear-publicacion-widget {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-new-post {
+  flex: 1;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 24px;
+  padding: 12px 16px;
+  color: #999;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-new-post:hover {
+  background-color: #e8e8e8;
+}
+
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-tiny {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   TARJETAS DE PUBLICACIÓN
+========================================================= */
+
+.publicaciones-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.publicacion-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.publicacion-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.pub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.pub-autor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.pub-autor-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.pub-autor-info strong {
+  color: #333;
+  font-size: 14px;
+}
+
+.pub-autor-info small {
+  color: #999;
+  font-size: 12px;
+}
+
+.pub-acciones {
+  display: flex;
+  gap: 8px;
+}
+
+.pub-content {
+  padding: 15px;
+}
+
+.pub-content h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.pub-content p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.pub-imagen {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.pub-stats {
+  display: flex;
+  gap: 20px;
+  padding: 12px 15px;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 13px;
+  color: #666;
+}
+
+.pub-stats span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pub-stats i {
+  color: #e74c3c;
+}
+
+.pub-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+
+.btn-action {
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-action:hover {
+  color: #2d8659;
+  background-color: #f5f5f5;
+}
+
+.btn-action i {
+  font-size: 16px;
+}
+
+/* =========================================================
+   MODAL DE CREAR PUBLICACIÓN
+========================================================= */
+
+.modal-crear-pub {
+  max-width: 550px;
+  padding: 30px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-crear-pub h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.modal-crear-pub input[type="file"] {
+  cursor: pointer;
+}
+
+.modal-crear-pub small {
+  display: block;
+  margin-top: 4px;
+  color: #999;
+  font-size: 12px;
+}
+
+/* =========================================================
+   MODAL DE COMENTARIOS
+========================================================= */
+
+.modal-comentarios {
+  max-width: 500px;
+  padding: 30px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-comentarios h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+/* =========================================================
+   MODALES PERFIL Y CONFIGURACION
+========================================================= */
+
+.modal-perfil,
+.modal-config {
+  max-width: 520px;
+  padding: 30px;
+}
+
+.modal-perfil h3,
+.modal-config h3 {
+  margin: 0 0 20px 0;
+  color: #333;
+  font-size: 20px;
+}
+
+.config-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #333;
+}
+
+.modal-config #btn-reset-badges {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.comentarios-lista {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding-right: 10px;
+}
+
+.comentario-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.comentario-item:last-child {
+  border-bottom: none;
+}
+
+.comentario-contenido {
+  flex: 1;
+}
+
+.comentario-contenido strong {
+  display: block;
+  color: #333;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.comentario-contenido p {
+  margin: 0 0 6px 0;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.comentario-contenido small {
+  color: #999;
+  font-size: 11px;
+}
+
+.form-comentario {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 15px;
+}
+
+.form-comentario textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.form-comentario textarea:focus {
+  outline: none;
+  border-color: #2d8659;
+  box-shadow: 0 0 0 3px rgba(45, 134, 89, 0.1);
+}
+
+.form-comentario button {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+}
+
+/* =========================================================
+   ESTADOS ESPECIALES
+========================================================= */
+
+.loading {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.empty-feed {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+  font-size: 14px;
+}
+
+.error {
+  background-color: #ffe6e0;
+  color: #e74c3c;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .feed-container {
+    padding: 0;
+  }
+
+  .pub-stats {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .btn-action {
+    font-size: 12px;
+  }
+
+  .user-dropdown {
+    right: 0;
+    top: auto;
+    bottom: -10px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    border-radius: 8px;
+  }
+
+  .modal-auth,
+  .modal-crear-pub,
+  .modal-comentarios {
+    padding: 20px;
+  }
+
+  .pub-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pub-actions {
+    justify-content: space-between;
+  }
+
+  .btn-action {
+    font-size: 11px;
+    padding: 8px;
+  }
+}
