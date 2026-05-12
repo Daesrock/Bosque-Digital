@@ -16,6 +16,7 @@ const usuariosRoutes = require('./api/routes/usuarios');
 const publicacionesRoutes = require('./api/routes/publicaciones');
 const comentariosRoutes = require('./api/routes/comentarios');
 const likesRoutes = require('./api/routes/likes');
+const impactoRoutes = require('./api/routes/impacto');
 
 const app = express();
 
@@ -61,6 +62,9 @@ app.use('/api/comentarios', comentariosRoutes);
 
 // Likes
 app.use('/api/likes', likesRoutes);
+
+// Impacto
+app.use('/api/impacto', impactoRoutes);
 
 // =====================================================
 // RUTAS DE PRUEBA

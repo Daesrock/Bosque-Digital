@@ -84,6 +84,30 @@ CREATE TABLE Sesiones (
 );
 
 -- =====================================================
+-- TABLA: ImpactoColectivo (Estadísticas globales de la comunidad)
+-- =====================================================
+CREATE TABLE ImpactoColectivo (
+    ImpactoID INT PRIMARY KEY IDENTITY(1,1),
+    UsuariosRegistrados INT DEFAULT 0,
+    ArbolesPlantados INT DEFAULT 0,
+    VoluntariosActivos INT DEFAULT 0,
+    TonCO2Evitadas DECIMAL(10, 2) DEFAULT 0,
+    FechaActualizacion DATETIME DEFAULT GETDATE()
+);
+
+-- =====================================================
+-- TABLA: RegistroImpacto (Histórico de impacto individual)
+-- =====================================================
+CREATE TABLE RegistroImpacto (
+    RegistroID INT PRIMARY KEY IDENTITY(1,1),
+    UsuarioID INT NOT NULL,
+    AreaForestal DECIMAL(10, 2),
+    TonCO2Equivalente DECIMAL(10, 2),
+    FechaCalculo DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (UsuarioID) REFERENCES Usuarios(UsuarioID) ON DELETE CASCADE
+);
+
+-- =====================================================
 -- ÍNDICES para optimización
 -- =====================================================
 CREATE INDEX IX_Publicaciones_UsuarioID ON Publicaciones(UsuarioID);
@@ -92,6 +116,7 @@ CREATE INDEX IX_Comentarios_UsuarioID ON Comentarios(UsuarioID);
 CREATE INDEX IX_Likes_PublicacionID ON Likes(PublicacionID);
 CREATE INDEX IX_Likes_UsuarioID ON Likes(UsuarioID);
 CREATE INDEX IX_Sesiones_UsuarioID ON Sesiones(UsuarioID);
+CREATE INDEX IX_RegistroImpacto_UsuarioID ON RegistroImpacto(UsuarioID);
 
 GO
 
@@ -157,5 +182,10 @@ INSERT INTO Likes (PublicacionID, UsuarioID)
 VALUES 
 (1, 2),
 (2, 1);
+
+-- Inicializar Impacto Colectivo
+INSERT INTO ImpactoColectivo (UsuariosRegistrados, ArbolesPlantados, VoluntariosActivos, TonCO2Evitadas)
+VALUES 
+(1247, 8934, 342, 56);
 
 GO

@@ -198,6 +198,36 @@ const RECOMENDACIONES = {
 let gaugeChart = null;
 
 /* =========================================================
+   GUARDAR IMPACTO INDIVIDUAL EN LA BD
+========================================================= */
+/**
+ * Guarda el impacto individual del usuario en la base de datos
+ * @param {number} areaForestal - Total m² impactados
+ */
+async function guardarImpactoIndividual(areaForestal) {
+  // Solo guardar si el usuario está autenticado
+  if (!api || !api.estaAutenticado()) {
+    console.log("Usuario no autenticado, impacto no se guarda en BD");
+    return;
+  }
+
+  try {
+    // Convertir m² a toneladas de CO₂ equivalente (aproximadamente 1 m² ≈ 0.005 tonCO₂)
+    const tonCO2Equivalente = (areaForestal * 0.005).toFixed(2);
+
+    // Guardar en BD
+    await api.guardarImpactoIndividual(areaForestal, tonCO2Equivalente);
+    
+    console.log(
+      `✓ Impacto guardado: ${areaForestal} m² (${tonCO2Equivalente} ton CO₂)`
+    );
+  } catch (error) {
+    console.error("Error al guardar impacto individual:", error);
+    // No mostrar error al usuario, solo silenciosa
+  }
+}
+
+/* =========================================================
    INICIALIZACIÓN
 ========================================================= */
 document.addEventListener("DOMContentLoaded", () => {
@@ -364,6 +394,9 @@ function mostrarResultados(totalM2, nivel, desglose) {
   if (results && window.innerWidth <= 960) {
     results.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
+
+  // Guardar impacto individual en la BD (si el usuario está autenticado)
+  guardarImpactoIndividual(totalM2);
 }
 
 /* =========================================================

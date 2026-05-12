@@ -1,7 +1,7 @@
 /**
  * main.js — Bosque Digital: Conocer para Proteger
  * Lógica general: navbar, contadores, tabs, especies, leyes,
- * foro, comunidad, gráficas Chart.js, acordeón blog, tooltips.
+ * comunidad, gráficas Chart.js, acordeón blog, tooltips.
  * Autor: Equipo Bosque Digital — UNACH 2026
  */
 
@@ -28,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initOrganizaciones();
   initBuscadorLeyes();
   initBlog();
-  initForo();
   initRegistro();
   initImpactoColectivo();
   initModal();
@@ -683,126 +682,6 @@ function initBlog() {
       }
     });
   });
-}
-
-/* =========================================================
-   TAB 4 — FORO SIMULADO (localStorage)
-========================================================= */
-function initForo() {
-  const form = document.getElementById("foroForm");
-  const nombreInput = document.getElementById("foroNombre");
-  const mensajeInput = document.getElementById("foroMensaje");
-  const charCount = document.getElementById("foroCharCount");
-  const container = document.getElementById("forumComments");
-
-  if (!form) return;
-
-  // Mostrar comentarios existentes en localStorage
-  renderComentariosForo();
-
-  // Contador de caracteres
-  if (mensajeInput) {
-    mensajeInput.addEventListener("input", () => {
-      const len = mensajeInput.value.length;
-      charCount.textContent = `${len}/300`;
-      charCount.style.color = len >= 280 ? "#C0392B" : "";
-    });
-  }
-
-  // Enviar nuevo comentario
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const nombre = nombreInput.value.trim();
-    const mensaje = mensajeInput.value.trim();
-
-    if (!nombre || !mensaje) return;
-
-    const comentario = {
-      id: Date.now(),
-      nombre,
-      mensaje,
-      fecha: new Date().toLocaleDateString("es-MX", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-      }),
-    };
-
-    // Guardar en localStorage
-    const comentarios = obtenerComentarios();
-    comentarios.unshift(comentario);
-    // Limite de 50 comentarios para no saturar storage
-    if (comentarios.length > 50) comentarios.pop();
-    localStorage.setItem("bd_foro", JSON.stringify(comentarios));
-
-    // Limpiar formulario
-    form.reset();
-    charCount.textContent = "0/300";
-
-    // Re-renderizar y mostrar toast
-    renderComentariosForo();
-    mostrarToast("¡Comentario publicado en el foro!");
-  });
-
-  function obtenerComentarios() {
-    try {
-      return JSON.parse(localStorage.getItem("bd_foro") || "[]");
-    } catch {
-      return [];
-    }
-  }
-
-  function renderComentariosForo() {
-    if (!container) return;
-    const comentarios = obtenerComentarios();
-
-    // Añadir algunos comentarios semilla si está vacío
-    const semillas = [
-      {
-        id: 1,
-        nombre: "Laura Pérez",
-        mensaje:
-          "Este proyecto me hizo reflexionar mucho sobre mis hábitos de consumo. ¡Voy a reducir mi consumo de carne!",
-        fecha: "05 mar 2026",
-      },
-      {
-        id: 2,
-        nombre: "Carlos Ruiz",
-        mensaje:
-          "Muy impresionante ver la pérdida de bosques en el mapa. Chiapas necesita más atención urgente.",
-        fecha: "04 mar 2026",
-      },
-      {
-        id: 3,
-        nombre: "Ana González",
-        mensaje:
-          "Me registré como voluntaria en el proyecto de Ocosingo. ¡El bosque nos necesita!",
-        fecha: "03 mar 2026",
-      },
-    ];
-
-    const todos = [...comentarios, ...semillas]
-      .sort((a, b) => (b.id || 0) - (a.id || 0))
-      .slice(0, 20);
-
-    container.innerHTML = todos
-      .map(
-        (c) => `
-      <article class="forum-comment" role="article">
-        <div class="comment-author">
-          <span class="comment-name">
-            <i class="fas fa-user-circle" aria-hidden="true" style="color:var(--verde-claro)"></i>
-            ${escHtml(c.nombre)}
-          </span>
-          <span class="comment-time">${c.fecha}</span>
-        </div>
-        <p class="comment-text">${escHtml(c.mensaje)}</p>
-      </article>
-    `,
-      )
-      .join("");
-  }
 }
 
 /* =========================================================

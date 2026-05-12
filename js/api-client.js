@@ -137,6 +137,17 @@ class APIClient {
     });
   }
 
+  async cambiarContrasena(contraseñaActual, contraseñaNueva, confirmarNueva) {
+    return this.request('/usuarios/cambiar-contrasena', {
+      method: 'PUT',
+      body: JSON.stringify({
+        contraseñaActual,
+        contraseñaNueva,
+        confirmarNueva
+      })
+    });
+  }
+
   // =====================================================
   // PUBLICACIONES
   // =====================================================
@@ -244,6 +255,42 @@ class APIClient {
 
   async verificarLike(publicacionID) {
     return this.request(`/likes/usuario/${publicacionID}`, {
+      method: 'GET'
+    });
+  }
+
+  // =====================================================
+  // IMPACTO
+  // =====================================================
+
+  async obtenerImpactoColectivo() {
+    return this.request('/impacto/colectivo', {
+      method: 'GET'
+    });
+  }
+
+  async actualizarImpactoColectivo(arboles = 0, voluntarios = 0, tonCO2 = 0) {
+    return this.request('/impacto/colectivo', {
+      method: 'PUT',
+      body: JSON.stringify({ arboles, voluntarios, tonCO2 })
+    });
+  }
+
+  async guardarImpactoIndividual(areaForestal, tonCO2Equivalente) {
+    return this.request('/impacto/individual', {
+      method: 'POST',
+      body: JSON.stringify({ areaForestal, tonCO2Equivalente })
+    });
+  }
+
+  async obtenerHistorialImpacto() {
+    return this.request('/impacto/individual/historial', {
+      method: 'GET'
+    });
+  }
+
+  async obtenerPromedioImpacto() {
+    return this.request('/impacto/individual/promedio', {
       method: 'GET'
     });
   }

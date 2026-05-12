@@ -1428,70 +1428,7 @@
               </div>
             </div>
 
-            <!-- Foro simulado -->
-            <div class="foro-section glass-card" data-aos="fade-up">
-              <h3>
-                <i class="fas fa-comments" aria-hidden="true"></i>
-                Foro Comunitario
-              </h3>
-              <p>
-                Comparte tus ideas, reflexiones y compromisos con la comunidad
-                Bosque Digital.
-              </p>
 
-              <!-- Formulario del foro -->
-              <form
-                id="foroForm"
-                class="foro-form"
-                novalidate
-                aria-label="Formulario para publicar en el foro"
-              >
-                <div class="foro-form-row">
-                  <div class="form-group">
-                    <label for="foroNombre">Tu nombre</label>
-                    <input
-                      type="text"
-                      id="foroNombre"
-                      class="form-input"
-                      placeholder="Nombre o apodo"
-                      maxlength="50"
-                      required
-                      aria-required="true"
-                    />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="foroMensaje">Tu mensaje</label>
-                  <textarea
-                    id="foroMensaje"
-                    class="form-textarea"
-                    placeholder="Escribe una reflexión, compromiso, pregunta o idea..."
-                    rows="3"
-                    maxlength="300"
-                    required
-                    aria-required="true"
-                  ></textarea>
-                  <span class="char-count" id="foroCharCount">0/300</span>
-                </div>
-                <button
-                  type="submit"
-                  class="btn-publicar"
-                  aria-label="Publicar mensaje en el foro"
-                >
-                  <i class="fas fa-paper-plane" aria-hidden="true"></i> Publicar
-                </button>
-              </form>
-
-              <!-- Lista de comentarios -->
-              <div
-                id="forumComments"
-                class="forum-comments"
-                role="feed"
-                aria-label="Mensajes del foro"
-              >
-                <!-- Generado dinámicamente por main.js desde localStorage -->
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1712,9 +1649,7 @@
               role="region"
               aria-label="Usuarios registrados"
             >
-              <span class="impacto-num" data-target="1247" id="colUsuarios"
-                >0</span
-              >
+              <span class="impacto-num" id="colUsuarios">0</span>
               <span class="impacto-label">Usuarios Registrados</span>
             </div>
             <div
@@ -1722,9 +1657,7 @@
               role="region"
               aria-label="Árboles plantados"
             >
-              <span class="impacto-num" data-target="8934" id="colArboles"
-                >0</span
-              >
+              <span class="impacto-num" id="colArboles">0</span>
               <span class="impacto-label">Árboles Plantados</span>
             </div>
             <div
@@ -1732,9 +1665,7 @@
               role="region"
               aria-label="Voluntarios activos"
             >
-              <span class="impacto-num" data-target="342" id="colVoluntarios"
-                >0</span
-              >
+              <span class="impacto-num" id="colVoluntarios">0</span>
               <span class="impacto-label">Voluntarios Activos</span>
             </div>
             <div
@@ -1742,7 +1673,7 @@
               role="region"
               aria-label="Toneladas de CO2 evitadas"
             >
-              <span class="impacto-num" data-target="56" id="colCO2">0</span>
+              <span class="impacto-num" id="colCO2">0</span>
               <span class="impacto-label">Ton CO₂ Evitadas</span>
             </div>
           </div>
@@ -2009,6 +1940,7 @@
 
     <!-- Scripts propios del proyecto (el orden importa) -->
     <script src="js/api-client.js"></script>
+    <script src="js/impacto-colectivo.js"></script>
     <script src="js/auth-ui.js"></script>
     <script src="js/comunidad-feed.js"></script>
     <script src="js/badges.js"></script>

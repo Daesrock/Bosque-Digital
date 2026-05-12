@@ -138,9 +138,36 @@ class AuthUI {
             </label>
             <button type="submit" class="btn-primary">Guardar preferencias</button>
           </form>
+          <button type="button" id="btn-cambiar-contrasena" class="btn-primary" style="background-color: #E67E22;">
+            <i class="fas fa-key"></i> Cambiar Contraseña
+          </button>
           <button type="button" id="btn-reset-badges" class="btn-primary">
             Restablecer insignias
           </button>
+        </div>
+      </div>
+
+      <!-- Modal de Cambiar Contraseña -->
+      <div id="modal-cambiar-contrasena" class="modal">
+        <div class="modal-content modal-cambiar-contrasena">
+          <button class="modal-close" aria-label="Cerrar">&times;</button>
+          <h3><i class="fas fa-lock"></i> Cambiar Contraseña</h3>
+          <form id="form-cambiar-contrasena">
+            <div class="form-group">
+              <label for="cambiar-actual">Contraseña Actual</label>
+              <input type="password" id="cambiar-actual" placeholder="••••••••" required>
+            </div>
+            <div class="form-group">
+              <label for="cambiar-nueva">Contraseña Nueva</label>
+              <input type="password" id="cambiar-nueva" placeholder="••••••••" required minlength="6">
+              <small>Mínimo 6 caracteres</small>
+            </div>
+            <div class="form-group">
+              <label for="cambiar-confirmar">Confirmar Nueva Contraseña</label>
+              <input type="password" id="cambiar-confirmar" placeholder="••••••••" required minlength="6">
+            </div>
+            <button type="submit" class="btn-primary">Cambiar Contraseña</button>
+          </form>
         </div>
       </div>
     `;
@@ -229,6 +256,8 @@ class AuthUI {
 
     document.getElementById('form-perfil')?.addEventListener('submit', (e) => this.guardarPerfil(e));
     document.getElementById('form-config')?.addEventListener('submit', (e) => this.guardarConfiguracion(e));
+    document.getElementById('btn-cambiar-contrasena')?.addEventListener('click', () => this.abrirCambiarContrasena());
+    document.getElementById('form-cambiar-contrasena')?.addEventListener('submit', (e) => this.cambiarContrasena(e));
     document.getElementById('btn-reset-badges')?.addEventListener('click', () => this.resetearInsignias());
   }
 
@@ -504,6 +533,66 @@ class AuthUI {
   resetearInsignias() {
     if (window.bdBadges && window.bdBadges.resetear) {
       window.bdBadges.resetear();
+    }
+  }
+
+  abrirCambiarContrasena() {
+    const modal = document.getElementById('modal-cambiar-contrasena');
+    const modalConfig = document.getElementById('modal-config');
+    if (modalConfig) modalConfig.style.display = 'none';
+    if (modal) modal.style.display = 'flex';
+  }
+
+  async cambiarContrasena(e) {
+    e.preventDefault();
+
+    const actual = document.getElementById('cambiar-actual')?.value;
+    const nueva = document.getElementById('cambiar-nueva')?.value;
+    const confirmar = document.getElementById('cambiar-confirmar')?.value;
+
+    if (!actual || !nueva || !confirmar) {
+      alert('Por favor completa todos los campos');
+      return;
+    }
+
+    if (nueva !== confirmar) {
+      alert('Las contraseñas nuevas no coinciden');
+      return;
+    }
+
+    if (nueva.length < 6) {
+      alert('La contraseña debe tener al menos 6 caracteres');
+      return;
+    }
+
+    try {
+      await api.cambiarContrasena(actual, nueva, confirmar);
+
+      // Limpiar formulario
+      document.getElementById('form-cambiar-contrasena').reset();
+
+      // Mostrar éxito
+      if (window.mostrarToast) {
+        window.mostrarToast('✓ Contraseña cambiada correctamente');
+      } else {
+        alert('✓ Contraseña cambiada correctamente');
+      }
+
+      // Cerrar modal
+      const modal = document.getElementById('modal-cambiar-contrasena');
+      if (modal) modal.style.display = 'none';
+
+      // Hacer logout después de cambiar contraseña
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    } catch (error) {
+      console.error('Error al cambiar contraseña:', error);
+      if (window.mostrarToast) {
+        window.mostrarToast('✗ ' + (error.message || 'Error al cambiar contraseña'));
+      } else {
+        alert('Error: ' + (error.message || 'Error al cambiar contraseña'));
+      }
     }
   }
 
