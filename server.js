@@ -25,8 +25,15 @@ const app = express();
 // =====================================================
 
 // CORS
+const allowedOrigins = (process.env.CORS_ORIGIN || '*').split(',').map(origin => origin.trim());
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || '*',
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('No permitido por CORS'));
+    }
+  },
   credentials: true
 }));
 
