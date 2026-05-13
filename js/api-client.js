@@ -3,8 +3,18 @@
  */
 
 class APIClient {
-  constructor(baseURL = 'http://localhost:3000/api') {
-    this.baseURL = baseURL;
+  constructor(baseURL = null) {
+    // Dinámico: usa localhost en desarrollo, Azure en producción
+    if (!baseURL) {
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        this.baseURL = 'http://localhost:3000/api';
+      } else {
+        // En Azure, usa la misma URL base pero sin /api
+        this.baseURL = `${window.location.origin}/api`;
+      }
+    } else {
+      this.baseURL = baseURL;
+    }
     this.token = localStorage.getItem('token');
   }
 
