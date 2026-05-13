@@ -14,10 +14,12 @@ const config = {
     type: 'default'
   },
   options: {
-    encrypt: process.env.DB_ENCRYPT === 'true',
-    trustServerCertificate: process.env.DB_TRUST_CERT === 'true',
+    encrypt: true, // Siempre encriptado
+    trustServerCertificate: true, // Confía en el certificado de Azure
     connectTimeout: 30000,
-    requestTimeout: 30000
+    requestTimeout: 30000,
+    connectionRetryInterval: 100,
+    connectionRetryCount: 3
   }
 };
 

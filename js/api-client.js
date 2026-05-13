@@ -4,12 +4,12 @@
 
 class APIClient {
   constructor(baseURL = null) {
-    // Dinámico: usa localhost en desarrollo, Azure en producción
+    // Dinámico: usa localhost en desarrollo, la misma app en producción
     if (!baseURL) {
       if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
         this.baseURL = 'http://localhost:3000/api';
       } else {
-        // En Azure, usa la misma URL base pero sin /api
+        // En Azure, usa la misma aplicación (frontend + backend en uno)
         this.baseURL = `${window.location.origin}/api`;
       }
     } else {
